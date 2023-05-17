@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["next/core-web-vitals", "standard"],
+	"rules": {
+		"indent": [1, "tab"],
+		"no-tabs": 0,
+		"jsx-quotes": [1, "prefer-single"],
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"no-unused-vars": 1,
+		"useUnknownInCatchVariables": 0
+	}
 }
