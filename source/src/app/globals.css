@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#map {
+	width: 50vw;
+	height: 65vh;
+	z-index: 10;
+	position: relative;
+}
