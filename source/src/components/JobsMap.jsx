@@ -1,9 +1,37 @@
 'use client'
+
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import iconLocation from '@/assets/icons/icon-location.svg'
 import L from 'leaflet'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-export default function JobsMap () {
+export default function JobsMap ({ jobs }) {
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(true)
+	const [markers, setMarkers] = useState(true)
+
+	useEffect(() => {
+		Promise.all(jobs.map(async (job) => {
+			const location = await axios('https://nominatim.openstreetmap.org/search', {
+				params: {
+					q: `${job.location.city}, ${job.location.province}, Spain}`,
+					format: 'json',
+					limit: 1,
+					'accept-language': 'es'
+				},
+				timeout: 10000
+			})
+				.then(res => {
+					console.log(res.data)
+					// if (res.data.length > 0) return { lat: res.data[0].lat, lon: res.data[0].lon }
+				})
+				.catch(() => setError(true))
+				.finally(() => setLoading(false))
+			return { ...job, location }
+		}))
+	}, [])
+
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,
 		iconSize: [30, 40], // size of the icon
@@ -11,24 +39,17 @@ export default function JobsMap () {
 	})
 	const location = [40, -3]
 
-	const markers = [
-		{
-			lat: 43,
-			lon: -3
-		},
-		{
-			lat: 40.6,
-			lon: -4
-		},
-		{
-			lat: 42,
-			lon: -3.5
-		},
-		{
-			lat: 39,
-			lon: -4.3
-		}
-	]
+	if (loading) {
+		return (
+			<div>Loading...</div>
+		)
+	}
+
+	if (error) {
+		return (
+			<div>Error</div>
+		)
+	}
 
 	return (
 		<MapContainer center={location} zoom={6} id='map'>

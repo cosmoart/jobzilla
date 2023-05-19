@@ -14,19 +14,7 @@ export async function GET (request) {
 		}
 	})
 		.then(res => res.data)
-		.catch(err => err)
-
-	const location = await axios('https://nominatim.openstreetmap.org/search', {
-		params: {
-			q: `${job.city}, ${job.province.value}, ${job.country.value}`,
-			format: 'json',
-			limit: 1
-		}
-	})
-		.then(res => {
-			if (res.data.length > 0) return { lat: res.data[0].lat, lon: res.data[0].lon }
-		})
-		.catch(err => err)
+		.catch(err => { return { error: true, message: err } })
 
 	const jobArray = {
 		id: job.id,
@@ -34,8 +22,6 @@ export async function GET (request) {
 		description: job.profile.description,
 		link: job.link,
 		location: {
-			lat: location.lat ?? 0,
-			lon: location.lon ?? 0,
 			city: job.city ?? '',
 			province: job.province.value ?? '',
 			country: job.country.value ?? ''

@@ -1,9 +1,9 @@
-import JobMap from '@/components/JobMap'
 import axios from 'axios'
-const FETCH_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://jobzilla.vercel.app'
+import dynamic from 'next/dynamic'
+const JobMap = dynamic(() => import('@/components/JobMap'), { ssr: false })
 
 const fetchJob = async (id) => {
-	return await axios(`${FETCH_URL}/api/job?id=${id}`, { cache: 'no-store' })
+	return await axios(`${process.env.FETCH_URL}/api/job?id=${id}`, { cache: 'no-store' })
 		.then(res => {
 			if (res.data.status >= 400) return { error: true }
 			return res.data
@@ -21,15 +21,15 @@ export default async function Job ({ params }) {
 
 	return (
 		<main className='flex'>
-			<div>
+			<div className='flex-grow basis-0 p-3'>
 				<h1 className='text-xl font-bold'>{job.title}</h1>
 				<p>{job.description}</p>
 				<p className='font-bold'>{job.location.city}, {job.location.province}, {job.location.country}</p>
-				<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-3 bg-blue-500 rounded uppercase block text-center'>Aplicar</a>
+				<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-3 bg-blue-500 rounded uppercase block text-center whitespace-pre-line'>Aplicar</a>
 				<strong>La ubicación en el mapa no es exacta, es un aproximado.</strong>
 			</div>
-			<div>
-				<JobMap job={job} />
+			<div className='flex-grow basis-0'>
+				<JobMap location={job.location} />
 			</div>
 		</main>
 	)
