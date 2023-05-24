@@ -6,7 +6,7 @@ const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
 export const revalidate = 60
 
 const fetchJobs = async () => {
-	return await axios(`${process.env.FETCH_URL}/api/jobs`, { cache: 'no-store' })
+	return await axios('/api/jobs', { cache: 'no-store' })
 		.then(res => {
 			if (res.data.status >= 400) return { error: true }
 			return res.data

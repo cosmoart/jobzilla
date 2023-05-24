@@ -13,26 +13,20 @@ export default function JobMap ({ location }) {
 
 	useEffect(() => {
 		setLoading(true)
-		axios('https://nominatim.openstreetmap.org/search', {
+		axios('/api/location', {
 			params: {
-				q: `${location.city}, ${location.province}, ${location.country ?? 'Spain'}}`,
-				format: 'json',
-				limit: 1,
-				'accept-language': 'es'
-			},
-			timeout: 10000
+				location: `${location.city}, ${location.province}, ${location.country ?? 'Spain'}`
+			}
 		})
-			.then(res => {
-				if (res.data.length > 0) setCords([res.data[0].lat, res.data[0].lon])
-			})
+			.then(res => setCords(res.data))
 			.catch(() => setError(true))
 			.finally(() => setLoading(false))
-	}, [])
+	}, [location])
 
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,
-		iconSize: [30, 40], // size of the icon
-		iconAnchor: [16, 40] // point of the icon which will correspond to marker's location
+		iconSize: [30, 40],
+		iconAnchor: [16, 40]
 	})
 
 	if (loading) {
@@ -48,9 +42,9 @@ export default function JobMap ({ location }) {
 	}
 
 	return (
-		<MapContainer center={cords} zoom={6} id='map'>
+		<MapContainer center={[cords.lat, cords.lon]} zoom={6} id='map'>
 			<TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-			<Marker position={cords} icon={locationIcon}>
+			<Marker position={[cords.lat, cords.lon]} icon={locationIcon}>
 				<Popup>
 					{location.city}, {location.province}, {location.country}
 				</Popup>
