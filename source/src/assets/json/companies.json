@@ -1,0 +1,38 @@
+[
+	{
+		"name": "MAPFRE",
+		"description": "MAPFRE, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/237/300",
+		"offers": 13
+	},
+	{
+		"name": "AXA",
+		"description": "AXA, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/23/300",
+		"offers": 13
+	},
+	{
+		"name": "ALLIANZ",
+		"description": "ALLIANZ, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/27/300",
+		"offers": 13
+	},
+	{
+		"name": "LIBERTY",
+		"description": "LIBERTY, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/357/300",
+		"offers": 13
+	},
+	{
+		"name": "GENERALI",
+		"description": "GENERALI, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/268/300",
+		"offers": 13
+	},
+	{
+		"name": "ZURICH",
+		"description": "ZURICH, aseguradora global de confianza",
+		"img": "https://picsum.photos/id/2/300",
+		"offers": 13
+	}
+]

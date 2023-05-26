@@ -16,17 +16,5 @@ export async function GET (request) {
 		.then(res => res.data)
 		.catch(err => { return { error: true, message: err } })
 
-	const jobArray = {
-		id: job.id,
-		title: job.title,
-		description: job.profile.description,
-		link: job.link,
-		location: {
-			city: job.city ?? '',
-			province: job.province.value ?? '',
-			country: job.country.value ?? ''
-		}
-	}
-
-	return NextResponse.json(jobArray)
+	return NextResponse.json(job)
 }

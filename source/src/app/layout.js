@@ -1,6 +1,7 @@
 import NavBar from '@/components/NavBar'
 import './globals.css' // inside .js file
 import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,14 +41,12 @@ export default function RootLayout ({ children }) {
 				<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.css' />
 				<link rel='stylesheet' href='https://unpkg.com/leaflet/dist/leaflet.css' />
 
-				<link
-					rel='stylesheet'
-					href='https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css'
-				/>
+				<link rel='stylesheet' href='https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css' />
 			</head>
-			<body className={inter.className}>
+			<body className={`${inter.className} dark:bg-gray-700 dark:text-white min-h-screen flex flex-col`}>
 				<NavBar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)

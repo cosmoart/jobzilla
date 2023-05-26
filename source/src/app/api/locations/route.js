@@ -8,7 +8,7 @@ export async function GET (request) {
 
 	const locations = await Promise.all(jobs.map(async (job) => {
 		const name = `${job.city}, ${job.province}, Spain`
-		const location = await axios(`https://api.maptiler.com/geocoding/${name.replace('/', ' ')}.json`, {
+		const location = await axios(`https://api.maptiler.com/geocoding/${name.replaceAll('/', ' ')}.json`, {
 			params: {
 				limit: 1,
 				key: process.env.MAPTILER_API_KEY

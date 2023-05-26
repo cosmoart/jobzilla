@@ -2,9 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	transition: color 0.1s ease-out, background 0.1s ease-out;
+}
+
 #map {
 	width: 50vw;
 	height: 77vh;
 	z-index: 10;
 	position: relative;
+}
+
+::selection {
+	background: rgb(37 99 235);
+}
+:focus-visible:not(input) {
+	border-radius: 3px;
+	outline: 4px dashed rgb(99 102 241);
+	outline-offset: 4px;
+}
+
+/* ============ SCROLL-BAR ========= */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	border: 3px solid white;
+	background: rgb(79, 90, 109);
+	transition: background 0.1s ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(47, 51, 66);
+}
+
+.dark ::-webkit-scrollbar-track {
+	background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: gray;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: rgb(255, 255, 255);
 }

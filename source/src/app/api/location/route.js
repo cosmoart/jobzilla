@@ -6,7 +6,7 @@ export async function GET (request) {
 	const location = searchParams.get('location')
 	if (!location) return NextResponse.json({ error: true, message: 'No job provided' }, { status: 400 })
 
-	const coords = await axios(`https://api.maptiler.com/geocoding/${location.replace('/', ' ')}.json`, {
+	const coords = await axios(`https://api.maptiler.com/geocoding/${location.replaceAll('/', ' ')}.json`, {
 		params: {
 			limit: 1,
 			key: process.env.MAPTILER_API_KEY
@@ -26,6 +26,5 @@ export async function GET (request) {
 			throw err
 		})
 
-	console.log(coords)
 	return NextResponse.json(coords)
 }

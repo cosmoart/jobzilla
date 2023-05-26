@@ -1,0 +1,148 @@
+[
+	{
+		"id": 20,
+		"value": "Administración Pública",
+		"order": 1,
+		"key": "administracion-publica",
+		"color": "#ff3f31"
+	},
+	{
+		"id": 10,
+		"value": "Administración de empresas",
+		"order": 2,
+		"key": "administracion-empresas",
+		"color": "#ffaf23"
+	},
+	{
+		"id": 170,
+		"value": "Atención a clientes",
+		"order": 3,
+		"key": "atencion-a-cliente",
+		"color": "#76c71d"
+	},
+	{
+		"id": 30,
+		"value": "Calidad, producción e I+D",
+		"order": 4,
+		"key": "calidad-produccion-id",
+		"color": "#0048ba"
+	},
+	{
+		"id": 190,
+		"value": "Comercial y ventas",
+		"order": 5,
+		"key": "comercial-ventas",
+		"color": "#8a2be2"
+	},
+	{
+		"id": 40,
+		"value": "Compras, logística y almacén",
+		"order": 6,
+		"key": "compras-logistica-almacen",
+		"color": "#ff7f50"
+	},
+	{
+		"id": 50,
+		"value": "Diseño y artes gráficas",
+		"order": 7,
+		"key": "diseno-artes-graficas",
+		"color": "#00ff00"
+	},
+	{
+		"id": 60,
+		"value": "Educación y formación",
+		"order": 8,
+		"key": "educacion-formacion",
+		"color": "#ff00ff"
+	},
+	{
+		"id": 70,
+		"value": "Finanzas y banca",
+		"order": 9,
+		"key": "finanzas-banca",
+		"color": "#ff6f00"
+	},
+	{
+		"id": 150,
+		"value": "Informática y telecomunicaciones",
+		"order": 10,
+		"key": "informatica-telecomunicaciones",
+		"color": "#800080"
+	},
+	{
+		"id": 80,
+		"value": "Ingenieros y técnicos",
+		"order": 11,
+		"key": "ingenieros-tecnicos",
+		"color": "#008080"
+	},
+	{
+		"id": 90,
+		"value": "Inmobiliario y construcción",
+		"order": 12,
+		"key": "inmobiliario-construccion",
+		"color": "#ffd700"
+	},
+	{
+		"id": 100,
+		"value": "Legal",
+		"order": 13,
+		"key": "legal"
+	},
+	{
+		"id": 110,
+		"value": "Marketing y comunicación",
+		"order": 14,
+		"key": "marketing-comunicacion",
+		"color": "#a52a2a"
+	},
+	{
+		"id": 120,
+		"value": "Profesiones, artes y oficios",
+		"order": 15,
+		"key": "profesiones-artes-oficios",
+		"color": "#ff4500"
+	},
+	{
+		"id": 130,
+		"value": "Recursos humanos",
+		"order": 16,
+		"key": "recursos-humanos",
+		"color": "#808000"
+	},
+	{
+		"id": 140,
+		"value": "Sanidad y salud",
+		"order": 17,
+		"key": "sanidad-salud",
+		"color": "#2e8b57"
+	},
+	{
+		"id": 210,
+		"value": "Sector Farmacéutico",
+		"order": 18,
+		"key": "sector-farmaceutico",
+		"color": "#dc143c"
+	},
+	{
+		"id": 160,
+		"value": "Turismo y restauración",
+		"order": 19,
+		"key": "turismo-restauracion",
+		"color": "#1e90ff"
+	},
+	{
+		"id": 200,
+		"value": "Ventas al detalle",
+		"order": 20,
+		"key": "venta-detalle",
+		"color": "#ff69b4"
+	},
+	{
+		"id": 180,
+		"value": "Otros",
+		"order": 21,
+		"key": "otros",
+		"color": "#7cfc00"
+	}
+]

@@ -106,6 +106,8 @@ npm run dev
 <!-- LICENSE -->
 ## License
 
+**The information displayed on this page has been obtained through the Infojobs API and is subject to the Infojobs terms and conditions.** I thank Infojobs for providing the data that makes it possible to view this information.
+
 Distributed under the **MIT License**. See [`LICENSE`](https://github.com/cosmoart/jobzilla/blob/main/LICENCE) for more information.
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
