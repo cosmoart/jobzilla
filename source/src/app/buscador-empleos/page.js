@@ -43,7 +43,7 @@ export default async function Home () {
 					{jobs.map((job) => (
 						<li key={job.id} className='p-4 rounded-md border hover:bg-blue-200 transition-colors'>
 							<Link rel='prefetch' href={`/job/${job.id}`} className='flex gap-5 items-center'>
-								<Image src={job.author.logoUrl ?? '/company-logo.png'} alt='' width={50} height={50} className='rounded-full aspect-square' />
+								<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt='' width={50} height={50} className='rounded-full aspect-square' />
 								<div>
 									<h2 className='text-xl font-bold'>{job.title}</h2>
 									<p>{job.requirementMin}</p>
