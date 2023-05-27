@@ -6,7 +6,7 @@ import L from 'leaflet'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export default function JobMap ({ location }) {
+export default function JobMap ({ job }) {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
 	const [cords, setCords] = useState([0, 0])
@@ -15,13 +15,13 @@ export default function JobMap ({ location }) {
 		setLoading(true)
 		axios('/api/location', {
 			params: {
-				location: `${location.city}, ${location.province}, ${location.country ?? 'Spain'}`
+				location: `${job.city}, ${job.province.value}, ${job.country.value ?? 'España'}`
 			}
 		})
 			.then(res => setCords(res.data))
 			.catch(() => setError(true))
 			.finally(() => setLoading(false))
-	}, [location])
+	}, [])
 
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,

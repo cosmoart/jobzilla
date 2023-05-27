@@ -33,7 +33,7 @@ export default function NavBar () {
 	return (
 		<header className='group darkHeader shadow sticky top-0 z-40 backdrop-blur '>
 			<nav className='mx-auto max-w-6xl'>
-				<ul className='flex gap-5 p-4 justify-center items-center font-normal'>
+				<ul className='flex gap-5 py-4 px-4 lg:px-0 justify-center items-center font-normal'>
 					<li>
 						<Link href='/'>
 							<Image className='group-[&.darkHeader]:invert' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
@@ -44,6 +44,9 @@ export default function NavBar () {
 					</li>
 					<li>
 						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
+					</li>
+					<li>
+						<Link href='/informacion' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Información</Link>
 					</li>
 					<li className='flex-grow flex justify-end'>
 						<DarkBtn />

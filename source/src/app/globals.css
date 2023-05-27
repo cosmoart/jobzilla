@@ -11,6 +11,7 @@
 	height: 77vh;
 	z-index: 10;
 	position: relative;
+	border-radius: 10px;
 }
 
 ::selection {
@@ -52,4 +53,9 @@
 
 .dark ::-webkit-scrollbar-thumb:hover {
 	background: rgb(255, 255, 255);
+}
+
+#scrollX::-webkit-scrollbar {
+	height: 10px;
+	opacity: 0.5;
 }

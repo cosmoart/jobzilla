@@ -1,5 +1,3 @@
-'use client'
-
 import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 import iconLocation from '@/assets/icons/icon-location.svg'
 import L from 'leaflet'
@@ -7,6 +5,12 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function JobsMap ({ jobs }) {
+	console.log('hello world')
+	const jobsLocations = jobs.map(job => ({
+		city: job.city,
+		province: job.province.value
+	}))
+
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
 	const [markers, setMarkers] = useState([])
@@ -15,13 +19,13 @@ export default function JobsMap ({ jobs }) {
 		setLoading(true)
 		axios('/api/locations', {
 			params: {
-				jobs: JSON.stringify(jobs.map(job => job.location))
+				jobs: JSON.stringify(jobsLocations)
 			}
 		})
 			.then(res => setMarkers(res.data))
 			.catch(() => setError(true))
 			.finally(() => setLoading(false))
-	}, [jobs])
+	}, [])
 
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,
