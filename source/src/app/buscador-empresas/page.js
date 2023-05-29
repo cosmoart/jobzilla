@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function BuscadorEmpresas () {
 	const [companies, setCompanies] = useState([])
@@ -39,18 +40,20 @@ export default function BuscadorEmpresas () {
 				error && <p className='text-center'>Ha ocurrido un error</p>
 			}
 			{
-				companies.length && !loading && !error > 0 && (
+				companies.length > 0 && !loading && !error && (
 					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto px-4 mt-8'>
 						{
 							companies.map((company, i) => (
-								<section className='bg-blue-300 p-4 rounded-md overflow-hidden' key={i}>
-									<Image className='rounded-md'
-										src={company.logo?.includes('null') ? '/company-logo.png' : company.logo}
-										width={100} height={100}
-										alt={`${company.name} logo`} />
-									<h3 className='text-xl font-medium'>{company.name}</h3>
-									<p className='max-h-60'>{company.description}</p>
-								</section>
+								<Link key={i} href={`/empresa?sdrn=${company.sdrn}`} className='bg-blue-300 p-4 rounded-md overflow-hidden'>
+									<section>
+										<Image className='rounded-md'
+											src={company.logo?.includes('null') ? '/company-logo.png' : company.logo}
+											width={100} height={100}
+											alt={`${company.name} logo`} />
+										<h3 className='text-xl font-medium'>{company.name}</h3>
+										<p className='max-h-60'>{company.description}</p>
+									</section>
+								</Link>
 							))
 						}
 					</div>

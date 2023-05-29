@@ -1,18 +1,32 @@
 'use client'
 
 import Link from 'next/link'
-import DarkBtn from './DarkBtn'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import DarkBtn from './DarkBtn'
+import menuIcon from '@/assets/icons/menu.svg'
+import closeIcon from '@/assets/icons/close.svg'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 export default function NavBar () {
+	const [screenWidth, setScreenWidth] = useState(1400)
+	const [showMenu, setShowMenu] = useState(false)
+
 	const AuthURL = `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml
 	?scope=MY_APPLICATIONS
 	&client_id=${process.env.NEXT_PUBLIC_INFOJOBS_CLIENT_ID}
 	&redirect_uri=https://jobzilla.vercel.app
 	&response_type=code`
 	const pathname = usePathname()
+
+	useEffect(() => {
+		setScreenWidth(window.innerWidth)
+		function handleResize () {
+			setScreenWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
 
 	useEffect(() => {
 		const navbar = document.querySelector('header')
@@ -33,29 +47,30 @@ export default function NavBar () {
 	return (
 		<header className='group darkHeader shadow sticky top-0 z-40 backdrop-blur '>
 			<nav className='mx-auto max-w-6xl'>
-				<ul className='flex gap-5 py-4 px-4 lg:px-0 justify-center items-center font-normal'>
-					<li>
-						<Link href='/'>
-							<Image className='group-[&.darkHeader]:invert' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
-						</Link>
-					</li>
-					<li>
+				<div className='flex relative gap-5 py-4 px-4 xl:px-0 justify-center items-center font-normal'>
+					<Link href='/'>
+						<Image className='group-[&.darkHeader]:invert' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
+					</Link>
+					<div className={`flex-grow flex justify-end ${screenWidth < 924 ? '' : 'hidden'}`}>
+						<button className='group-[&.darkHeader]:text-slate-900 text-white hover:text-blue-600'>
+							<Image src={menuIcon} alt='Menu icon' width={30} height={30} onClick={() => setShowMenu(!showMenu)} />
+						</button>
+					</div>
+					<div className={`flex shadow md:shadow-none items-center gap-5 rounded-md flex-grow top-0 ${screenWidth < 924 ? 'flex-col absolute transition-all items-end px-5 py-2 right-0 bg-white' : ''} ${screenWidth < 924 && (showMenu ? 'top-14	opacity-100' : 'opacity-0 pointer-events-none -z-10')}`}>
 						<Link href='/buscador-empleos' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empleos</Link>
-					</li>
-					<li>
 						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
-					</li>
-					<li>
 						<Link href='/informacion' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Información</Link>
-					</li>
-					<li className='flex-grow flex justify-end'>
-						<DarkBtn />
-					</li>
-					<li>
-						<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block rounded-full'></a>
-					</li>
-				</ul>
+						<div className='flex gap-2 md:gap-4 ml-auto' >
+							<div className='flex-grow flex justify-end'>
+								<DarkBtn />
+							</div>
+							<div>
+								<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block rounded-full'></a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</nav>
-		</header>
+		</header >
 	)
 }

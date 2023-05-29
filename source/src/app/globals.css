@@ -14,6 +14,14 @@
 	border-radius: 10px;
 }
 
+.jobShortDescription {
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	display: -webkit-box;
+}
+
 ::selection {
 	background: rgb(37 99 235);
 }
