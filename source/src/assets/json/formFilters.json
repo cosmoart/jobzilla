@@ -1,0 +1,1617 @@
+{
+	"category": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-"
+		},
+		{
+			"id": 20,
+			"value": "Administración Pública",
+			"order": 1,
+			"key": "administracion-publica"
+		},
+		{
+			"id": 10,
+			"value": "Administración de empresas",
+			"order": 2,
+			"key": "administracion-empresas"
+		},
+		{
+			"id": 170,
+			"value": "Atención a clientes",
+			"order": 3,
+			"key": "atencion-a-cliente"
+		},
+		{
+			"id": 30,
+			"value": "Calidad, producción e I+D",
+			"order": 4,
+			"key": "calidad-produccion-id"
+		},
+		{
+			"id": 190,
+			"value": "Comercial y ventas",
+			"order": 5,
+			"key": "comercial-ventas"
+		},
+		{
+			"id": 40,
+			"value": "Compras, logística y almacén",
+			"order": 6,
+			"key": "compras-logistica-almacen"
+		},
+		{
+			"id": 50,
+			"value": "Diseño y artes gráficas",
+			"order": 7,
+			"key": "diseno-artes-graficas"
+		},
+		{
+			"id": 60,
+			"value": "Educación y formación",
+			"order": 8,
+			"key": "educacion-formacion"
+		},
+		{
+			"id": 70,
+			"value": "Finanzas y banca",
+			"order": 9,
+			"key": "finanzas-banca"
+		},
+		{
+			"id": 150,
+			"value": "Informática y telecomunicaciones",
+			"order": 10,
+			"key": "informatica-telecomunicaciones"
+		},
+		{
+			"id": 80,
+			"value": "Ingenieros y técnicos",
+			"order": 11,
+			"key": "ingenieros-tecnicos"
+		},
+		{
+			"id": 90,
+			"value": "Inmobiliario y construcción",
+			"order": 12,
+			"key": "inmobiliario-construccion"
+		},
+		{
+			"id": 100,
+			"value": "Legal",
+			"order": 13,
+			"key": "legal"
+		},
+		{
+			"id": 110,
+			"value": "Marketing y comunicación",
+			"order": 14,
+			"key": "marketing-comunicacion"
+		},
+		{
+			"id": 120,
+			"value": "Profesiones, artes y oficios",
+			"order": 15,
+			"key": "profesiones-artes-oficios"
+		},
+		{
+			"id": 130,
+			"value": "Recursos humanos",
+			"order": 16,
+			"key": "recursos-humanos"
+		},
+		{
+			"id": 140,
+			"value": "Sanidad y salud",
+			"order": 17,
+			"key": "sanidad-salud"
+		},
+		{
+			"id": 210,
+			"value": "Sector Farmacéutico",
+			"order": 18,
+			"key": "sector-farmaceutico"
+		},
+		{
+			"id": 160,
+			"value": "Turismo y restauración",
+			"order": 19,
+			"key": "turismo-restauracion"
+		},
+		{
+			"id": 200,
+			"value": "Ventas al detalle",
+			"order": 20,
+			"key": "venta-detalle"
+		},
+		{
+			"id": 180,
+			"value": "Otros",
+			"order": 21,
+			"key": "otros"
+		}
+	],
+	"subcategory": [
+		{
+			"id": -3118,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 170
+		},
+		{
+			"id": -3115,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 160
+		},
+		{
+			"id": -3105,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 150
+		},
+		{
+			"id": -3098,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 140
+		},
+		{
+			"id": -3094,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 130
+		},
+		{
+			"id": -3077,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 120
+		},
+		{
+			"id": -3068,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 110
+		},
+		{
+			"id": -3063,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 100
+		},
+		{
+			"id": -3056,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 90
+		},
+		{
+			"id": -3044,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 80
+		},
+		{
+			"id": -3039,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 70
+		},
+		{
+			"id": -3033,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 60
+		},
+		{
+			"id": -3027,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 50
+		},
+		{
+			"id": -3024,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 40
+		},
+		{
+			"id": -3020,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 190
+		},
+		{
+			"id": -3017,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 30
+		},
+		{
+			"id": -3011,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 20
+		},
+		{
+			"id": -3000,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 10
+		},
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "-",
+			"parent": 0
+		},
+		{
+			"id": 3134,
+			"value": "Acceso al mercado y relaciones institucionales",
+			"order": 20,
+			"key": "acceso-mercado-relaciones-institucionales",
+			"parent": 210
+		},
+		{
+			"id": 3014,
+			"value": "Administraciones europeas",
+			"order": 20,
+			"key": "administraciones-europeas",
+			"parent": 20
+		},
+		{
+			"id": 3000,
+			"value": "Administración",
+			"order": 20,
+			"key": "administracion",
+			"parent": 10
+		},
+		{
+			"id": 3011,
+			"value": "Administración autonómica",
+			"order": 20,
+			"key": "administracion-autonomica",
+			"parent": 20
+		},
+		{
+			"id": 3105,
+			"value": "Administración de bases de datos",
+			"order": 20,
+			"key": "administracion-bases-datos",
+			"parent": 150
+		},
+		{
+			"id": 3012,
+			"value": "Administración del Estado",
+			"order": 20,
+			"key": "administracion-estado",
+			"parent": 20
+		},
+		{
+			"id": 3056,
+			"value": "Administración inmobiliaria",
+			"order": 20,
+			"key": "administracion-inmobiliaria",
+			"parent": 90
+		},
+		{
+			"id": 3013,
+			"value": "Administración local",
+			"order": 20,
+			"key": "administracion-local",
+			"parent": 20
+		},
+		{
+			"id": 3044,
+			"value": "Aeronáutico",
+			"order": 20,
+			"key": "aeronautico",
+			"parent": 80
+		},
+		{
+			"id": 3131,
+			"value": "Agente comercial",
+			"order": 20,
+			"key": "agente-comercial",
+			"parent": 190
+		},
+		{
+			"id": 3077,
+			"value": "Agricultura y jardinería",
+			"order": 20,
+			"key": "agricultura-jardineria",
+			"parent": 120
+		},
+		{
+			"id": 3045,
+			"value": "Agrónomo y montes",
+			"order": 20,
+			"key": "agronomo-montes",
+			"parent": 80
+		},
+		{
+			"id": 3026,
+			"value": "Almacén",
+			"order": 20,
+			"key": "almacen",
+			"parent": 40
+		},
+		{
+			"id": 3106,
+			"value": "Análisis",
+			"order": 20,
+			"key": "analisis",
+			"parent": 150
+		},
+		{
+			"id": 3107,
+			"value": "Arquitectura",
+			"order": 20,
+			"key": "arquitectura",
+			"parent": 150
+		},
+		{
+			"id": 3057,
+			"value": "Arquitectura y proyección",
+			"order": 20,
+			"key": "arquitectura-proyeccion",
+			"parent": 90
+		},
+		{
+			"id": 3078,
+			"value": "Artes interpretativas",
+			"order": 20,
+			"key": "artes-interpretativas",
+			"parent": 120
+		},
+		{
+			"id": 3079,
+			"value": "Artes plásticas",
+			"order": 20,
+			"key": "artes-plasticas",
+			"parent": 120
+		},
+		{
+			"id": 3080,
+			"value": "Artesanía",
+			"order": 20,
+			"key": "artesania",
+			"parent": 120
+		},
+		{
+			"id": 3137,
+			"value": "Asuntos regulatorios",
+			"order": 20,
+			"key": "asuntos-regulatorios",
+			"parent": 210
+		},
+		{
+			"id": 3118,
+			"value": "Atención al cliente",
+			"order": 20,
+			"key": "atencion-a-cliente",
+			"parent": 170
+		},
+		{
+			"id": 3001,
+			"value": "Auditoría",
+			"order": 20,
+			"key": "auditoria",
+			"parent": 10
+		},
+		{
+			"id": 3081,
+			"value": "Automoción",
+			"order": 20,
+			"key": "automocion",
+			"parent": 120
+		},
+		{
+			"id": 3039,
+			"value": "Banca empresarial",
+			"order": 20,
+			"key": "banca-empresarial",
+			"parent": 70
+		},
+		{
+			"id": 3040,
+			"value": "Banca privada",
+			"order": 20,
+			"key": "banca-privada",
+			"parent": 70
+		},
+		{
+			"id": 3041,
+			"value": "Bolsa, valores e inversión",
+			"order": 20,
+			"key": "bolsa-valores-inversion",
+			"parent": 70
+		},
+		{
+			"id": 3108,
+			"value": "Calidad",
+			"order": 20,
+			"key": "calidad",
+			"parent": 150
+		},
+		{
+			"id": 3138,
+			"value": "Calidad, producción e I+D",
+			"order": 20,
+			"key": "calidad-producciï¿??n-i-d",
+			"parent": 210
+		},
+		{
+			"id": 3082,
+			"value": "Carpintería",
+			"order": 20,
+			"key": "carpinteria",
+			"parent": 120
+		},
+		{
+			"id": 3017,
+			"value": "Certificación de calidad",
+			"order": 20,
+			"key": "certificacion-calidad",
+			"parent": 30
+		},
+		{
+			"id": 3119,
+			"value": "Comercial",
+			"order": 20,
+			"key": "comercial",
+			"parent": 190
+		},
+		{
+			"id": 3133,
+			"value": "Comercial y ventas",
+			"order": 20,
+			"key": "comercial-ventas",
+			"parent": 210
+		},
+		{
+			"id": 3126,
+			"value": "Comercio exterior",
+			"order": 20,
+			"key": "comercio-exterior",
+			"parent": 190
+		},
+		{
+			"id": 3024,
+			"value": "Compras y aprovisionamiento",
+			"order": 20,
+			"key": "compras-aprovisionamiento",
+			"parent": 40
+		},
+		{
+			"id": 3068,
+			"value": "Comunicación corporativa",
+			"order": 20,
+			"key": "comunicacion-corporativa",
+			"parent": 110
+		},
+		{
+			"id": 3083,
+			"value": "Confección",
+			"order": 20,
+			"key": "confeccion",
+			"parent": 120
+		},
+		{
+			"id": 3002,
+			"value": "Consultoría",
+			"order": 20,
+			"key": "consultoria",
+			"parent": 10
+		},
+		{
+			"id": 3084,
+			"value": "Consumo y alimentación",
+			"order": 20,
+			"key": "consumo-alimentacion",
+			"parent": 120
+		},
+		{
+			"id": 3027,
+			"value": "Creación audiovisual",
+			"order": 20,
+			"key": "creacion-audiovisual",
+			"parent": 50
+		},
+		{
+			"id": 3015,
+			"value": "Cuerpos de seguridad",
+			"order": 20,
+			"key": "cuerpos-seguridad",
+			"parent": 20
+		},
+		{
+			"id": 3063,
+			"value": "Derecho civil, penal y constitucional",
+			"order": 20,
+			"key": "derecho-civil-penal-constitucional",
+			"parent": 100
+		},
+		{
+			"id": 3064,
+			"value": "Derecho internacional",
+			"order": 20,
+			"key": "derecho-internacional",
+			"parent": 100
+		},
+		{
+			"id": 3065,
+			"value": "Derecho procesal",
+			"order": 20,
+			"key": "derecho-procesal",
+			"parent": 100
+		},
+		{
+			"id": 3066,
+			"value": "Derecho y empresa",
+			"order": 20,
+			"key": "derecho-empresa",
+			"parent": 100
+		},
+		{
+			"id": 3069,
+			"value": "Desarrollo de marca y producto",
+			"order": 20,
+			"key": "desarrollo-marca-producto",
+			"parent": 110
+		},
+		{
+			"id": 3003,
+			"value": "Dirección y gerencia",
+			"order": 20,
+			"key": "direccion-gerencia",
+			"parent": 10
+		},
+		{
+			"id": 3058,
+			"value": "Dirección y gestión de obras",
+			"order": 20,
+			"key": "direccion-gestion-obras",
+			"parent": 90
+		},
+		{
+			"id": 3028,
+			"value": "Diseño gráfico",
+			"order": 20,
+			"key": "diseno-grafico",
+			"parent": 50
+		},
+		{
+			"id": 3029,
+			"value": "Diseño industrial",
+			"order": 20,
+			"key": "diseno-industrial",
+			"parent": 50
+		},
+		{
+			"id": 3030,
+			"value": "Diseño web",
+			"order": 20,
+			"key": "diseno-web",
+			"parent": 50
+		},
+		{
+			"id": 3025,
+			"value": "Distribución y logística",
+			"order": 20,
+			"key": "distribucion-logistica",
+			"parent": 40
+		},
+		{
+			"id": 3109,
+			"value": "ERP, CRM, Business Intelligence",
+			"order": 20,
+			"key": "erp-crm-business-intelligence",
+			"parent": 150
+		},
+		{
+			"id": 3031,
+			"value": "Editorial e imprenta",
+			"order": 20,
+			"key": "editorial-imprenta",
+			"parent": 50
+		},
+		{
+			"id": 3033,
+			"value": "Educación especial",
+			"order": 20,
+			"key": "educacion-especial",
+			"parent": 60
+		},
+		{
+			"id": 3034,
+			"value": "Educación social",
+			"order": 20,
+			"key": "educacion-social",
+			"parent": 60
+		},
+		{
+			"id": 3085,
+			"value": "Electricidad",
+			"order": 20,
+			"key": "electricidad",
+			"parent": 120
+		},
+		{
+			"id": 3046,
+			"value": "Electrónica",
+			"order": 20,
+			"key": "electronica",
+			"parent": 80
+		},
+		{
+			"id": 3047,
+			"value": "Electrónica y automática industrial",
+			"order": 20,
+			"key": "electronica-automatica-industrial",
+			"parent": 80
+		},
+		{
+			"id": 3016,
+			"value": "Empresas públicas",
+			"order": 20,
+			"key": "empresas-publicas",
+			"parent": 20
+		},
+		{
+			"id": 3132,
+			"value": "Energias Renovables",
+			"order": 20,
+			"key": "energias-renovables",
+			"parent": 80
+		},
+		{
+			"id": 3098,
+			"value": "Enfermería",
+			"order": 20,
+			"key": "enfermeria",
+			"parent": 140
+		},
+		{
+			"id": 3035,
+			"value": "Enseñanza",
+			"order": 20,
+			"key": "ensenanza",
+			"parent": 60
+		},
+		{
+			"id": 3086,
+			"value": "Estética y cosmética",
+			"order": 20,
+			"key": "estetica-cosmetica",
+			"parent": 120
+		},
+		{
+			"id": 3004,
+			"value": "Facturación, cobros y pagos",
+			"order": 20,
+			"key": "facturacion-cobros-pagos",
+			"parent": 10
+		},
+		{
+			"id": 3099,
+			"value": "Farmacia",
+			"order": 20,
+			"key": "farmacia",
+			"parent": 140
+		},
+		{
+			"id": 3005,
+			"value": "Finanzas y contabilidad",
+			"order": 20,
+			"key": "finanzas-contabilidad",
+			"parent": 10
+		},
+		{
+			"id": 3087,
+			"value": "Fontanería",
+			"order": 20,
+			"key": "fontaneria",
+			"parent": 120
+		},
+		{
+			"id": 3094,
+			"value": "Formación",
+			"order": 20,
+			"key": "formacion",
+			"parent": 130
+		},
+		{
+			"id": 3088,
+			"value": "Fotografía ",
+			"order": 20,
+			"key": "fotografia",
+			"parent": 120
+		},
+		{
+			"id": 3048,
+			"value": "Geología, geodesia y cartografía",
+			"order": 20,
+			"key": "geologia-geodesia-cartografia",
+			"parent": 80
+		},
+		{
+			"id": 3036,
+			"value": "Gestión de centros educativos",
+			"order": 20,
+			"key": "gestion-centros-educativos",
+			"parent": 60
+		},
+		{
+			"id": 3018,
+			"value": "Gestión de la calidad",
+			"order": 20,
+			"key": "gestion-calidad",
+			"parent": 30
+		},
+		{
+			"id": 3020,
+			"value": "Gestión de proyectos",
+			"order": 20,
+			"key": "calidad-produccion-gestion-proyectos",
+			"parent": 30
+		},
+		{
+			"id": 3110,
+			"value": "Gestión de proyectos",
+			"order": 20,
+			"key": "it-gestion-proyectos",
+			"parent": 150
+		},
+		{
+			"id": 3127,
+			"value": "Gran cuenta",
+			"order": 20,
+			"key": "gran-cuenta",
+			"parent": 190
+		},
+		{
+			"id": 3111,
+			"value": "Hardware, redes y seguridad",
+			"order": 20,
+			"key": "hardware-redes-seguridad",
+			"parent": 150
+		},
+		{
+			"id": 3112,
+			"value": "Helpdesk",
+			"order": 20,
+			"key": "helpdesk",
+			"parent": 150
+		},
+		{
+			"id": 3115,
+			"value": "Hostelería",
+			"order": 20,
+			"key": "hosteleria",
+			"parent": 160
+		},
+		{
+			"id": 3049,
+			"value": "Industrial",
+			"order": 20,
+			"key": "industrial",
+			"parent": 80
+		},
+		{
+			"id": 3059,
+			"value": "Ingeniería civil y obras públicas",
+			"order": 20,
+			"key": "ingenieria-civil-obras-publicas",
+			"parent": 90
+		},
+		{
+			"id": 3060,
+			"value": "Ingeniería de materiales",
+			"order": 20,
+			"key": "ingenieria-materiales",
+			"parent": 90
+		},
+		{
+			"id": 3061,
+			"value": "Interiorismo",
+			"order": 20,
+			"key": "interiorismo",
+			"parent": 90
+		},
+		{
+			"id": 3136,
+			"value": "Investigación clínica y asuntos médicos",
+			"order": 20,
+			"key": "investigacion-clinica-asuntos-medicos",
+			"parent": 210
+		},
+		{
+			"id": 3070,
+			"value": "Investigación de mercados",
+			"order": 20,
+			"key": "investigacion-mercados",
+			"parent": 110
+		},
+		{
+			"id": 3021,
+			"value": "Investigación y desarrollo",
+			"order": 20,
+			"key": "investigacion-desarrollo",
+			"parent": 30
+		},
+		{
+			"id": 3089,
+			"value": "Limpieza",
+			"order": 20,
+			"key": "limpieza",
+			"parent": 120
+		},
+		{
+			"id": 3130,
+			"value": "Mantenimiento",
+			"order": 20,
+			"key": "mantenimiento",
+			"parent": 30
+		},
+		{
+			"id": 3071,
+			"value": "Marketing",
+			"order": 20,
+			"key": "marketing",
+			"parent": 110
+		},
+		{
+			"id": 3135,
+			"value": "Marketing y comunicación",
+			"order": 20,
+			"key": "marketing-comunicacion",
+			"parent": 210
+		},
+		{
+			"id": 3100,
+			"value": "Medicina especializada",
+			"order": 20,
+			"key": "medicina-especializada",
+			"parent": 140
+		},
+		{
+			"id": 3101,
+			"value": "Medicina general",
+			"order": 20,
+			"key": "medicina-general",
+			"parent": 140
+		},
+		{
+			"id": 3102,
+			"value": "Medicinas alternativas",
+			"order": 20,
+			"key": "medicinas-alternativas",
+			"parent": 140
+		},
+		{
+			"id": 3022,
+			"value": "Medio ambiente",
+			"order": 20,
+			"key": "medio-ambiente",
+			"parent": 30
+		},
+		{
+			"id": 3023,
+			"value": "Metrología",
+			"order": 20,
+			"key": "metrologia",
+			"parent": 30
+		},
+		{
+			"id": 3050,
+			"value": "Minas",
+			"order": 20,
+			"key": "minas",
+			"parent": 80
+		},
+		{
+			"id": 3032,
+			"value": "Moda y confección",
+			"order": 20,
+			"key": "moda-confeccion",
+			"parent": 50
+		},
+		{
+			"id": 3051,
+			"value": "Naval y oceánico",
+			"order": 20,
+			"key": "naval-oceanico",
+			"parent": 80
+		},
+		{
+			"id": 3006,
+			"value": "Negociación y contratación",
+			"order": 20,
+			"key": "negociacion-contratacion",
+			"parent": 10
+		},
+		{
+			"id": 3067,
+			"value": "Notaría y registros",
+			"order": 20,
+			"key": "notaria-registros",
+			"parent": 100
+		},
+		{
+			"id": 3140,
+			"value": "Odontología",
+			"order": 20,
+			"key": "odontologia",
+			"parent": 140
+		},
+		{
+			"id": 3062,
+			"value": "Oficios de la construcción",
+			"order": 20,
+			"key": "oficios-construccion",
+			"parent": 90
+		},
+		{
+			"id": 3019,
+			"value": "Operaciones",
+			"order": 20,
+			"key": "operaciones",
+			"parent": 30
+		},
+		{
+			"id": 3007,
+			"value": "Operaciones societarias",
+			"order": 20,
+			"key": "operaciones-societarias",
+			"parent": 10
+		},
+		{
+			"id": 3008,
+			"value": "Organización de la empresa",
+			"order": 20,
+			"key": "organizacion-empresa",
+			"parent": 10
+		},
+		{
+			"id": 3052,
+			"value": "Organización industrial",
+			"order": 20,
+			"key": "organizacion-industrial",
+			"parent": 80
+		},
+		{
+			"id": 3055,
+			"value": "Otras ingenierías",
+			"order": 20,
+			"key": "otras-ingenierias",
+			"parent": 80
+		},
+		{
+			"id": 3103,
+			"value": "Otras profesiones sanitarias",
+			"order": 20,
+			"key": "otras-profesiones-sanitarias",
+			"parent": 140
+		},
+		{
+			"id": 3093,
+			"value": "Otros oficios",
+			"order": 20,
+			"key": "otros-oficios",
+			"parent": 120
+		},
+		{
+			"id": 3037,
+			"value": "Pedagogía",
+			"order": 20,
+			"key": "pedagogia",
+			"parent": 60
+		},
+		{
+			"id": 3074,
+			"value": "Periodismo y edición",
+			"order": 20,
+			"key": "periodismo-edicion",
+			"parent": 110
+		},
+		{
+			"id": 3095,
+			"value": "Prevención de riesgos",
+			"order": 20,
+			"key": "prevencion-riesgos",
+			"parent": 130
+		},
+		{
+			"id": 3075,
+			"value": "Producción",
+			"order": 20,
+			"key": "produccion",
+			"parent": 110
+		},
+		{
+			"id": 3042,
+			"value": "Productos y servicios bancarios",
+			"order": 20,
+			"key": "productos-servicios-bancarios",
+			"parent": 70
+		},
+		{
+			"id": 3124,
+			"value": "Programación",
+			"order": 20,
+			"key": "programacion",
+			"parent": 150
+		},
+		{
+			"id": 3120,
+			"value": "Promoción y ferias",
+			"order": 20,
+			"key": "promocion-ferias",
+			"parent": 170
+		},
+		{
+			"id": 3104,
+			"value": "Psicología",
+			"order": 20,
+			"key": "psicologia",
+			"parent": 140
+		},
+		{
+			"id": 3072,
+			"value": "Publicidad",
+			"order": 20,
+			"key": "publicidad",
+			"parent": 110
+		},
+		{
+			"id": 3038,
+			"value": "Puericultura",
+			"order": 20,
+			"key": "puericultura",
+			"parent": 60
+		},
+		{
+			"id": 3053,
+			"value": "Químico",
+			"order": 20,
+			"key": "quimico",
+			"parent": 80
+		},
+		{
+			"id": 3073,
+			"value": "RRPP y eventos",
+			"order": 20,
+			"key": "rrpp-eventos",
+			"parent": 110
+		},
+		{
+			"id": 3009,
+			"value": "Recepción",
+			"order": 20,
+			"key": "recepcion",
+			"parent": 10
+		},
+		{
+			"id": 3096,
+			"value": "Relaciones laborales",
+			"order": 20,
+			"key": "relaciones-laborales",
+			"parent": 130
+		},
+		{
+			"id": 3116,
+			"value": "Restauración",
+			"order": 20,
+			"key": "restauracion",
+			"parent": 160
+		},
+		{
+			"id": 3010,
+			"value": "Secretariado",
+			"order": 20,
+			"key": "secretariado",
+			"parent": 10
+		},
+		{
+			"id": 3090,
+			"value": "Seguridad y vigilancia",
+			"order": 20,
+			"key": "seguridad-vigilancia",
+			"parent": 120
+		},
+		{
+			"id": 3043,
+			"value": "Seguros",
+			"order": 20,
+			"key": "seguros",
+			"parent": 70
+		},
+		{
+			"id": 3097,
+			"value": "Selección de personal",
+			"order": 20,
+			"key": "seleccion-personal",
+			"parent": 130
+		},
+		{
+			"id": 3123,
+			"value": "Sin especificar",
+			"order": 20,
+			"key": "-",
+			"parent": 180
+		},
+		{
+			"id": 3113,
+			"value": "Sistemas",
+			"order": 20,
+			"key": "sistemas",
+			"parent": 150
+		},
+		{
+			"id": 3054,
+			"value": "Sistemas de defensa",
+			"order": 20,
+			"key": "sistemas-defensa",
+			"parent": 80
+		},
+		{
+			"id": 3114,
+			"value": "Telecomunicaciones",
+			"order": 20,
+			"key": "telecomunicaciones",
+			"parent": 150
+		},
+		{
+			"id": 3122,
+			"value": "Televenta y marketing telefónico",
+			"order": 20,
+			"key": "televenta-marketing-telefonico",
+			"parent": 190
+		},
+		{
+			"id": 3091,
+			"value": "Traducción e interpretación",
+			"order": 20,
+			"key": "traduccion-interpretacion",
+			"parent": 120
+		},
+		{
+			"id": 3092,
+			"value": "Transporte",
+			"order": 20,
+			"key": "transporte",
+			"parent": 120
+		},
+		{
+			"id": 3117,
+			"value": "Turismo",
+			"order": 20,
+			"key": "turismo",
+			"parent": 160
+		},
+		{
+			"id": 3076,
+			"value": "Técnicas audiovisuales",
+			"order": 20,
+			"key": "tecnicas-audiovisuales",
+			"parent": 110
+		},
+		{
+			"id": 3121,
+			"value": "Venta al detalle",
+			"order": 20,
+			"key": "venta-detalle",
+			"parent": 200
+		},
+		{
+			"id": 3139,
+			"value": "Veterinaria",
+			"order": 20,
+			"key": "veterinaria",
+			"parent": 140
+		}
+	],
+	"teleworking": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "indicar"
+		},
+		{
+			"id": 1,
+			"value": "Presencial",
+			"order": 1,
+			"key": "trabajo-solo-presencial"
+		},
+		{
+			"id": 2,
+			"value": "Solo teletrabajo",
+			"order": 2,
+			"key": "solo-teletrabajo"
+		},
+		{
+			"id": 3,
+			"value": "Híbrido",
+			"order": 3,
+			"key": "teletrabajo-posible"
+		},
+		{
+			"id": 4,
+			"value": "Sin especificar",
+			"order": 4,
+			"key": "no-se-sabe-no-esta-decidido"
+		}
+	],
+	"contractType": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "seleccionar"
+		},
+		{
+			"id": 10,
+			"value": "Autónomo",
+			"order": 15,
+			"key": "autonomo"
+		},
+		{
+			"id": 8,
+			"value": "De duración determinada",
+			"order": 20,
+			"key": "de-duracion-determinada"
+		},
+		{
+			"id": 6,
+			"value": "De relevo",
+			"order": 30,
+			"key": "de-relevo"
+		},
+		{
+			"id": 9,
+			"value": "Fijo discontinuo",
+			"order": 40,
+			"key": "fijo-discontinuo"
+		},
+		{
+			"id": 3,
+			"value": "Formativo",
+			"order": 50,
+			"key": "formativo"
+		},
+		{
+			"id": 1,
+			"value": "Indefinido",
+			"order": 60,
+			"key": "indefinido"
+		},
+		{
+			"id": 4,
+			"value": "A tiempo parcial",
+			"order": 65,
+			"key": "a-tiempo-parcial"
+		},
+		{
+			"id": 5,
+			"value": "Otros contratos",
+			"order": 70,
+			"key": "otros-contratos"
+		}
+	],
+	"workday": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 1,
+			"key": "seleccionar"
+		},
+		{
+			"id": 1,
+			"value": "Completa",
+			"order": 2,
+			"key": "completa"
+		},
+		{
+			"id": 10,
+			"value": "Indiferente",
+			"order": 3,
+			"key": "indiferente"
+		},
+		{
+			"id": 2,
+			"value": "Parcial - Mañana",
+			"order": 4,
+			"key": "parcial-manana"
+		},
+		{
+			"id": 3,
+			"value": "Parcial - Tarde",
+			"order": 5,
+			"key": "parcial-tarde"
+		},
+		{
+			"id": 4,
+			"value": "Parcial - Noche",
+			"order": 6,
+			"key": "parcial-noche"
+		},
+		{
+			"id": 5,
+			"value": "Parcial - Indiferente",
+			"order": 7,
+			"key": "parcial-indiferente"
+		},
+		{
+			"id": 6,
+			"value": "Intensiva - Mañana",
+			"order": 8,
+			"key": "intensiva-manana"
+		},
+		{
+			"id": 7,
+			"value": "Intensiva - Tarde",
+			"order": 9,
+			"key": "intensiva-tarde"
+		},
+		{
+			"id": 8,
+			"value": "Intensiva - Noche",
+			"order": 10,
+			"key": "intensiva-noche"
+		},
+		{
+			"id": 9,
+			"value": "Intensiva - Indiferente",
+			"order": 11,
+			"key": "intensiva-indiferente"
+		}
+	],
+	"salaryPeriod": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 0,
+			"key": "seleccionar"
+		},
+		{
+			"id": 3,
+			"value": "Bruto/año",
+			"order": 10,
+			"key": "bruto-ano"
+		},
+		{
+			"id": 2,
+			"value": "Bruto/mes",
+			"order": 20,
+			"key": "bruto-mes"
+		},
+		{
+			"id": 1,
+			"value": "Bruto/hora",
+			"order": 30,
+			"key": "bruto-hora"
+		}
+	],
+	"study": [
+		{
+			"id": 0,
+			"value": "(Indicar Nivel)",
+			"order": 0,
+			"key": "indicar-nivel"
+		},
+		{
+			"id": 10,
+			"value": "Sin estudios",
+			"order": 5,
+			"key": "sin-estudios"
+		},
+		{
+			"id": 20,
+			"value": "Educación Secundaria Obligatoria",
+			"order": 10,
+			"key": "educacion-secundaria-obligatoria"
+		},
+		{
+			"id": 50,
+			"value": "Bachillerato",
+			"order": 20,
+			"key": "bachillerato"
+		},
+		{
+			"id": 35,
+			"value": "Ciclo Formativo Grado Medio",
+			"order": 30,
+			"key": "ciclo-formativo-grado-medio"
+		},
+		{
+			"id": 60,
+			"value": "Ciclo Formativo Grado Superior",
+			"order": 40,
+			"key": "ciclo-formativo-grado-superior"
+		},
+		{
+			"id": 23,
+			"value": "Enseñanzas artísticas (regladas)",
+			"order": 50,
+			"key": "ensenanzas-artisticas-regladas"
+		},
+		{
+			"id": 27,
+			"value": "Enseñanzas deportivas (regladas)",
+			"order": 60,
+			"key": "ensenanzas-deportivas-regladas"
+		},
+		{
+			"id": 125,
+			"value": "Grado",
+			"order": 70,
+			"key": "grado"
+		},
+		{
+			"id": 140,
+			"value": "Licenciatura",
+			"order": 80,
+			"key": "licenciado"
+		},
+		{
+			"id": 110,
+			"value": "Diplomatura",
+			"order": 90,
+			"key": "diplomado"
+		},
+		{
+			"id": 120,
+			"value": "Ingeniería Técnica",
+			"order": 100,
+			"key": "ingeniero-tecnico"
+		},
+		{
+			"id": 130,
+			"value": "Ingeniería Superior",
+			"order": 110,
+			"key": "ingeniero-superior"
+		},
+		{
+			"id": 143,
+			"value": "Postgrado",
+			"order": 120,
+			"key": "postgrado"
+		},
+		{
+			"id": 147,
+			"value": "Máster",
+			"order": 130,
+			"key": "master"
+		},
+		{
+			"id": 150,
+			"value": "Doctorado",
+			"order": 140,
+			"key": "doctorado"
+		},
+		{
+			"id": 160,
+			"value": "Otros títulos, certificaciones y carnés",
+			"order": 150,
+			"key": "otros-titulos-certificaciones-y-carnes"
+		},
+		{
+			"id": 170,
+			"value": "Otros cursos y formación no reglada",
+			"order": 160,
+			"key": "otros-cursos-y-formacion-no-reglada"
+		},
+		{
+			"id": 30,
+			"value": "Formación Profesional Grado Medio",
+			"order": 170,
+			"key": "formacion-profesional-grado-medio"
+		},
+		{
+			"id": 55,
+			"value": "Formación Profesional Grado Superior",
+			"order": 180,
+			"key": "formacion-profesional-grado-superior"
+		}
+	],
+	"experienceMin": [
+		{
+			"id": 0,
+			"value": "(Seleccionar)",
+			"order": 1,
+			"key": "seleccionar"
+		},
+		{
+			"id": 1,
+			"value": "No Requerida",
+			"order": 2,
+			"key": "no-requerida"
+		},
+		{
+			"id": 2,
+			"value": "Al menos 1 año",
+			"order": 3,
+			"key": "al-menos-1-ano"
+		},
+		{
+			"id": 6,
+			"value": "Al menos 2 años",
+			"order": 4,
+			"key": "al-menos-2-anos"
+		},
+		{
+			"id": 3,
+			"value": "Al menos 3 años",
+			"order": 5,
+			"key": "al-menos-3-anos"
+		},
+		{
+			"id": 4,
+			"value": "Al menos 4 años",
+			"order": 6,
+			"key": "al-menos-4-anos"
+		},
+		{
+			"id": 5,
+			"value": "Más de 5 años",
+			"order": 7,
+			"key": "mas-de-5-anos"
+		},
+		{
+			"id": 8,
+			"value": "Más de 10 años",
+			"order": 8,
+			"key": "mas-de-10-anos"
+		}
+	],
+	"sinceDate": [
+		{
+			"id": 0,
+			"value": "Cualquiera",
+			"order": 1,
+			"key": "ANY"
+		},
+		{
+			"id": 1,
+			"value": "Últimas 24 horas",
+			"order": 2,
+			"key": "_24_HOURS"
+		},
+		{
+			"id": 2,
+			"value": "Últimos 7 días",
+			"order": 3,
+			"key": "_7_DAYS"
+		},
+		{
+			"id": 3,
+			"value": "Últimos 15 días",
+			"order": 4,
+			"key": "_15_DAYS"
+		}
+	]
+}

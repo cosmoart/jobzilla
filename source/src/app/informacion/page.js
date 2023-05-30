@@ -8,11 +8,7 @@ export default function Informacion () {
 				</p>
 
 				<p>
-					Gracias a la API de Infojobs, puedo obtener información en tiempo real sobre los trabajos disponibles en su plataforma. Esto me permite mostrar una lista precisa y actualizada de ofertas de trabajo a los visitantes de mi sitio web. Además, también puedo mostrar información sobre las empresas que publican estos trabajos, lo que proporciona a los usuarios una visión más completa de las oportunidades disponibles.
-				</p>
-
-				<p>
-					Me gustaría agradecer a Infojobs y Midudev por proporcionar acceso a su API y permitirme integrarla en mi proyecto. Su plataforma es una referencia en el ámbito laboral y su API ha sido fundamental para hacer posible esta web. Estoy muy agradecido por su apoyo y por brindar la oportunidad de ofrecer un servicio valioso a los usuarios. Su dedicación y esfuerzo para crear una comunidad de desarrolladores comprometidos ha sido inspirador. Su apoyo y guía han sido fundamentales para que este proyecto se convierta en una realidad.
+					Esta web fue hecha para la hackathon de Infojobs y Midudev. El código fuente está disponible en <a className='underline' href='https://github.com/cosmoart/jobzilla' target='_blank' rel='noopener noreferrer'>GitHub</a>. Siéntete libre de revisarlo y contribuir si quieres.
 					¡Espero que esta web sea útil para todos los visitantes y ayude a conectar a personas con nuevas y emocionantes oportunidades laborales!
 				</p>
 			</div>

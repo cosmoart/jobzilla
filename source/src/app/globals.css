@@ -30,7 +30,7 @@
 ::selection {
 	background: rgb(37 99 235);
 }
-:focus-visible:not(input) {
+:focus-visible:not(input, select) {
 	border-radius: 3px;
 	outline: 4px dashed rgb(99 102 241);
 	outline-offset: 4px;
