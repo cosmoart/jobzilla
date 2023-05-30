@@ -6,9 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-// import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 
-// const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
+const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
 
 export default function BuscadorEmpleos () {
 	const [url, setUrl] = useState('/api/jobs')
@@ -16,15 +16,13 @@ export default function BuscadorEmpleos () {
 	const [data, loading, error] = useFetchData(url, params)
 	const searchParams = useSearchParams()
 
-	console.log('searchParams', Object.fromEntries(searchParams))
+	// console.log('searchParams', Object.fromEntries(searchParams))
 
 	function handleSubmit (e) {
 		e.preventDefault()
 		const formData = new FormData(e.target)
 		const job = formData.get('job')
 		const place = formData.get('place')
-		console.log(formData)
-		console.log('handleSubmit', job, place)
 		setParams({ q: job, city: place })
 	}
 
@@ -54,12 +52,12 @@ export default function BuscadorEmpleos () {
 						<MultiSelectBoxItem value='4' text='Baleares' />
 					</MultiSelectBox>
 
-					<MultiSelectBox>
+					{/* <MultiSelectBox>
 						<MultiSelectBoxItem value='1' text='Madrid' />
 						<MultiSelectBoxItem value='2' text='Barcelona' />
 						<MultiSelectBoxItem value='3' text='Valencia' />
 						<MultiSelectBoxItem value='4' text='Sevilla' />
-					</MultiSelectBox>
+					</MultiSelectBox> */}
 					<button className='bg-blue-500 hover:bg-blue-600 text-white rounded-md py-2 px-6'>Buscar</button>
 				</fieldset>
 
@@ -157,7 +155,7 @@ export default function BuscadorEmpleos () {
 				</ul>
 
 				{
-					// !loading && !error && jobs.length > 0 && <JobsMap jobs={jobs} />
+					!loading && !error && data.items.length > 0 && <JobsMap jobs={data.items} />
 				}
 			</div>
 		</main>

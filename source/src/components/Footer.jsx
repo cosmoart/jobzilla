@@ -18,6 +18,9 @@ export default function Footer () {
 						<Link aria-current='page' href='/buscador-empresas' className='hover:text-gray-700 dark:hover:text-white'>
 							Buscar empresas
 						</Link>
+						<Link aria-current='page' href='/buscador-empresas' className='hover:text-gray-700 dark:hover:text-white'>
+							Información
+						</Link>
 					</nav>
 					<div className='h-px mx-auto mt-4 rounded-full md:hidden w-11'>
 					</div>

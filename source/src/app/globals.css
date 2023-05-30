@@ -14,7 +14,8 @@
 	border-radius: 10px;
 }
 
-.jobShortDescription {
+.jobShortDescription,
+.companyShortDescription {
 	-webkit-line-clamp: 2;
 	line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -22,6 +23,10 @@
 	display: -webkit-box;
 }
 
+.companyShortDescription {
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+}
 ::selection {
 	background: rgb(37 99 235);
 }

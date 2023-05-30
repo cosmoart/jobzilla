@@ -3,18 +3,18 @@
 ![Work in progress](./readme/wip.svg)
 
 <div align="center">
-	<a href="https://demo.vercel.app">
-		<img src="https://picsum.photos/1000/200" alt="Web preview" />
+	<a href="https://jobzilla.vercel.app">
+		<img src="./readme/header.webp" alt="Web preview" />
 	</a>
 
 <br/>
 <br />
 
-  # 💼 Jobzilla
+  # 💼 Jobzilla 👨‍💻
 
-  An job search app.
+  An app to find your next job. Built with Next.js and Tailwind CSS with the help of the Infojobs API and leaflet.js for the map.
 
-  <a href="https://demo.vercel.app">View Demo</a>
+  <a href="https://jobzilla.vercel.app">View Demo</a>
   ·
   <a href="https://github.com/cosmoart/jobzilla/issues">Report Bug</a>
   ·
@@ -40,7 +40,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This is a project for the Infojobs Hackathon 2023. The app is built with Next.js and Tailwind CSS with the help of the Infojobs API and leaflet.js for the map.
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
 

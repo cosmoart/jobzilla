@@ -20,7 +20,7 @@ export default function Hero () {
 				<form className='flex flex-col sm:flex-row gap-2' onSubmit={handleSubmit}>
 					<input type='text' placeholder='Buscar trabajo' name='job' className='border px-4 border-gray-300 rounded-md p-2 w-full' required />
 					<input className='p-2 px-4 border rounded-md' list='places' id='placesID' name='place' placeholder='Toda España' required />
-					<datalist id='places'>
+					<datalist id='places' defaultValue='Madrid'>
 						<option value='Madrid'></option>
 						<option value='Barcelona'></option>
 						<option value='Valencia'></option>

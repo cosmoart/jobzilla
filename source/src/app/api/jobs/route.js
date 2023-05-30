@@ -17,7 +17,6 @@ export async function GET (request) {
 	})
 		.then(res => res.data)
 		.catch(err => err)
-	console.log(jobs)
 
 	return NextResponse.json(jobs)
 }

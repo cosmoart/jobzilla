@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function JobsMap ({ jobs }) {
-	console.log('hello world')
 	const jobsLocations = jobs.map(job => ({
 		city: job.city,
 		province: job.province.value

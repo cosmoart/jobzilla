@@ -45,7 +45,7 @@ export default async function Job ({ params }) {
 				</div>
 			</div>
 			<div className='flex-grow basis-0'>
-				{/* <JobMap job={job} /> */}
+				<JobMap job={job} />
 			</div>
 		</main>
 	)

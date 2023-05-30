@@ -14,7 +14,8 @@ export const metadata = {
 		title: 'Jobzilla',
 		description: 'Jobzilla is a job search engine that allows you to search for jobs in your area.',
 		url: 'https://jobzilla.vercel.app',
-		siteName: 'Jobzilla'
+		siteName: 'Jobzilla',
+		images: ['https://repository-images.githubusercontent.com/641688317/28863c5e-ff9e-4d3a-aca4-3949a4292fdc']
 	},
 	twitter: {
 		twitter: {
@@ -22,7 +23,7 @@ export const metadata = {
 			title: 'Jobzilla',
 			description: 'Jobzilla is a job search engine that allows you to search for jobs in your area.',
 			creator: '@cosmoart0',
-			images: ['https://picsum.photos/200']
+			images: ['https://repository-images.githubusercontent.com/641688317/28863c5e-ff9e-4d3a-aca4-3949a4292fdc']
 		}
 	},
 	robots: {
@@ -40,7 +41,6 @@ export default function RootLayout ({ children }) {
 			<head>
 				<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.css' />
 				<link rel='stylesheet' href='https://unpkg.com/leaflet/dist/leaflet.css' />
-
 				<link rel='stylesheet' href='https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css' />
 			</head>
 			<body className={`${inter.className} dark:bg-gray-700 dark:text-white min-h-screen flex flex-col`}>

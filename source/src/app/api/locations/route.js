@@ -22,7 +22,6 @@ export async function GET (request) {
 			})
 			.catch(err => {
 				if (err.response.status === 404) {
-					console.log(`${job.city}, ${job.province}, Spain`)
 					return { lon: Math.random() * 2 - 1, lat: Math.random() * 2 - 1 }
 				}
 				throw err
