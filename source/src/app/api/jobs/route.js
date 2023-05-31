@@ -4,7 +4,6 @@ import axios from 'axios'
 export async function GET (request) {
 	const url = new URL(request.url)
 	const params = Object.fromEntries(new URLSearchParams(url.search))
-
 	const jobs = await axios('https://api.infojobs.net/api/9/offer', {
 		headers: {
 			'Content-Type': 'application/json',

@@ -7,9 +7,10 @@ import menuIcon from '@/assets/icons/menu.svg'
 import closeIcon from '@/assets/icons/close.svg'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
+import useScreen from '@/hooks/useScreen'
 
 export default function NavBar () {
-	const [screenWidth, setScreenWidth] = useState(1400)
+	const screenWidth = useScreen()
 	const [showMenu, setShowMenu] = useState(false)
 
 	const AuthURL = `https://www.infojobs.net/api/oauth/user-authorize/index.xhtml
@@ -18,15 +19,6 @@ export default function NavBar () {
 	&redirect_uri=https://jobzilla.vercel.app
 	&response_type=code`
 	const pathname = usePathname()
-
-	useEffect(() => {
-		setScreenWidth(window.innerWidth)
-		function handleResize () {
-			setScreenWidth(window.innerWidth)
-		}
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
 
 	useEffect(() => {
 		const navbar = document.querySelector('header')

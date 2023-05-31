@@ -1,4 +1,5 @@
 const DATE_UNITS = [
+	['month', 2592000],
 	['day', 86400],
 	['hour', 3600],
 	['minute', 60],
@@ -19,6 +20,14 @@ const getDateDiffs = (timestamp) => {
 
 export default function useTimeAgo (timestamp) {
 	const { value, unit } = getDateDiffs(timestamp)
-	const rtf = new Intl.RelativeTimeFormat('es', { style: 'short' })
-	return rtf.format(value, unit)
+	const rtfShort = new Intl.RelativeTimeFormat('es', { style: 'short' })
+	const rtfLong = new Intl.RelativeTimeFormat('es', { style: 'long' })
+	const longTimeAgo = rtfLong.format(value, unit)
+	const newTime = unit === 'minute' || unit === 'hour'
+
+	return {
+		shortTimeAgo: rtfShort.format(value, unit),
+		longTimeAgo,
+		newTime
+	}
 }

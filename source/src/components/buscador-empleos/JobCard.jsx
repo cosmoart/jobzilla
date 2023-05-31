@@ -3,26 +3,31 @@ import Link from 'next/link'
 import useTimeAgo from '@/hooks/useTimeAgo'
 
 export default function JobCard ({ job }) {
-	const timeAgo = useTimeAgo(new Date(job.published))
+	const { shortTimeAgo, longTimeAgo, newTime } = useTimeAgo(new Date(job.published))
 
 	return (
-		<li key={job.id} className='p-4 rounded-md border hover:bg-blue-200 transition-colors'>
+		<li key={job.id} className='p-4 rounded-md border hover:bg-blue-100 transition-colors max-h-48'>
 			<Link rel='prefetch' href={`/oferta/${job.id}`} className='flex gap-5 items-center'>
-				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt='' width={50} height={50} className='rounded-full aspect-square' />
+				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt='' width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-slate-200' />
 				<div>
-					<h2 className='text-xl font-bold'>{job.title}</h2>
-					<p>Ubicación: {job.city} - {job.province.value}</p>
-					<span className='rounded bg-blue-500 p-1 text-white px-2 text-sm'>{timeAgo}</span>
-					<span>{job.category.value} - {job.subcategory.value}</span>
+					<div className='flex gap-3 items-center'>
+						<h2 className='text-xl font-bold'>{job.title}</h2>
+						<span className={`rounded p-1 whitespace-pre px-3 text-xs font-semibold ${newTime ? 'bg-blue-500 text-white' : 'ring-2'}`} title={longTimeAgo}>{shortTimeAgo}</span>
+					</div>
+					<p className='text-sm'>{job.city} - {job.province.value}</p>
+					<div className='flex gap-3 items-center'>
+						<strong className='text-sm font-semibold'>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</strong>
+						<span className='h-3 rounded w-[1px] bg-slate-800 inline-block' />
+						{
+							job.teleworking && <span className='text-sm'>{job.teleworking.value}</span>
+						}
+					</div>
+					{/* <span>{job.category.value} - {job.subcategory.value}</span>
 					<span>{job.contractType.value}</span>
-					<span>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</span>
 					<span>{job.experienceMin.value}</span>
 					<span>{job.workDay.value}</span>
-					<span>{job.study.value}</span>
-					{
-						job.teleworking && <span>{job.teleworking.value}</span>
-					}
-					<p className='jobShortDescription'>{job.requirementMin}</p>
+					<span>{job.study.value}</span> */}
+					<p className='jobShortDescription my-2'>{job.requirementMin}</p>
 				</div>
 			</Link>
 		</li>

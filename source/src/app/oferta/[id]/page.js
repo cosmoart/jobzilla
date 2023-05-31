@@ -24,9 +24,11 @@ export default async function Job ({ params }) {
 		<main className='flex mt-8'>
 			<div className='max-w-5xl px-3'>
 				<div>
-					<div className='w-full relative h-48'>
-						<Image src={job.profile?.headerImageUrl ?? '/'} alt='' fill={true} className='object-cover aspect-square relative' />
-					</div>
+					{
+						job.profile?.headerImageUrl && <div className='w-full relative h-48'>
+							<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover aspect-square relative' />
+						</div>
+					}
 					<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={50} height={50} className='rounded-full aspect-square' />
 					<strong>{job.profile.name}</strong>
 				</div>

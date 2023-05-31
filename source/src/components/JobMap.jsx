@@ -31,13 +31,13 @@ export default function JobMap ({ job }) {
 
 	if (loading) {
 		return (
-			<div>Loading...</div>
+			<div className='p-4 '>Cargando...</div>
 		)
 	}
 
 	if (error) {
 		return (
-			<div>Error</div>
+			<div className='p-4 '>Ocurrió un error</div>
 		)
 	}
 

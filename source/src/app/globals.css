@@ -5,14 +5,50 @@
 * {
 	transition: color 0.1s ease-out, background 0.1s ease-out;
 }
-
 #map {
 	width: 50vw;
-	height: 77vh;
+	height: 100%;
 	z-index: 10;
 	position: relative;
 	border-radius: 10px;
 }
+
+/* ============ INPUT RANGE ========= */
+
+input[type='range'] {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 8px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #3b82f6;
+	cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #3b82f6;
+	cursor: pointer;
+}
+
+input[type='range']:focus {
+	outline: none;
+}
+
+/* ============ DESCRIPTION ========= */
 
 .jobShortDescription,
 .companyShortDescription {
@@ -27,6 +63,9 @@
 	-webkit-line-clamp: 3;
 	line-clamp: 3;
 }
+
+/* ============ SELECTION - FOCUS ========= */
+
 ::selection {
 	background: rgb(37 99 235);
 }
