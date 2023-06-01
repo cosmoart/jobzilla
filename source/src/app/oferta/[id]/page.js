@@ -36,7 +36,7 @@ export default async function Job ({ params }) {
 							<strong className='font-semibold'>{job.profile.name}</strong>
 							<h1 className='text-xl font-bold my-1'>{job.title}</h1>
 						</div>
-						<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block hover:bg-blue-600 text-center text-white'>Aplicar</a>
+						<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block ml-4 hover:bg-blue-600 text-center text-white'>Aplicar</a>
 
 					</div>
 				</div>
@@ -51,7 +51,7 @@ export default async function Job ({ params }) {
 					<p className='font-bold'>{job.city}, {job.province.value}, {job.country.value}</p>
 				</div>
 			</div>
-			<div className='flex-grow basis-0 flex  h-[90vh]'>
+			<div className='flex-grow basis-0 flex h-[90vh]'>
 				<JobMap job={job} />
 			</div>
 		</main>
