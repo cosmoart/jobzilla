@@ -16,8 +16,14 @@ export default function JobCard ({ job }) {
 					</div>
 					<p className='text-sm'>{job.city} - {job.province.value}</p>
 					<div className='flex gap-3 items-center'>
-						<strong className='text-sm font-semibold'>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</strong>
-						<span className='h-3 rounded w-[1px] bg-slate-800 inline-block' />
+						{
+							job.salaryMin.value && (
+								<>
+									<strong className='text-sm font-semibold text-green-600'>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</strong>
+									<span className='h-3 rounded w-[1px] bg-slate-800 inline-block' />
+								</>
+							)
+						}
 						{
 							job.teleworking && <span className='text-sm'>{job.teleworking.value}</span>
 						}
