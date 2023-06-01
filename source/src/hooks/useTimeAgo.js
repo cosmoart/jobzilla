@@ -23,7 +23,7 @@ export default function useTimeAgo (timestamp) {
 	const rtfShort = new Intl.RelativeTimeFormat('es', { style: 'short' })
 	const rtfLong = new Intl.RelativeTimeFormat('es', { style: 'long' })
 	const longTimeAgo = rtfLong.format(value, unit)
-	const newTime = unit === 'minute' || unit === 'hour'
+	const newTime = unit === 'minute' || unit === 'hour' || unit === 'second'
 
 	return {
 		shortTimeAgo: rtfShort.format(value, unit),

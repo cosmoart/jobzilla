@@ -5,6 +5,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import loaderIcon from '@/assets/icons/loader.svg'
+import sadIcon from '@/assets/icons/sad.svg'
 
 export default function BuscadorEmpresas () {
 	const [companies, setCompanies] = useState(null)
@@ -15,11 +16,13 @@ export default function BuscadorEmpresas () {
 		e.preventDefault()
 		const formData = new FormData(e.target)
 		setloading(true)
-		if (formData.get('search').length > 1) {
+
+		if (formData.get('search').length > 0) {
 			axios('/api/companies', {
 				params: {
 					search: formData.get('search')
-				}
+				},
+				timeout: 2000
 			})
 				.then(res => setCompanies(res.data.items))
 				.catch(() => setError(true))
@@ -36,13 +39,18 @@ export default function BuscadorEmpresas () {
 		<main>
 			<h1 className='text-lg md:text-2xl my-6 text-center font-semibold'>Buscador de empresas</h1>
 			<form onSubmit={handleSubmit} className='flex flex-col px-4 sm:flex-row gap-4 items-center justify-center max-w-4xl mx-auto'>
-				<input type='text' placeholder='Buscar empresa' name='search' className='w-full sm:w-auto  py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' />
-				<button type='submit' className='w-full sm:w-auto py-2 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50'>Buscar</button>
+				<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full sm:w-auto  py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' required />
+				<button type='submit' className={`${loading ? 'bg-slate-700 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} w-full sm:w-auto py-2 px-6  text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50`} disabled={loading}>Buscar</button>
 			</form>
 			{
-				loading
-					? <Image src={loaderIcon} width={30} height={30} alt='Cargando...' className='mx-auto invert dark:invert-0 my-8' />
-					: <p className='text-center my-8'>{InfoMessage()}</p>
+				loading && <Image src={loaderIcon} width={30} height={30} alt='Cargando...' className='mx-auto invert dark:invert-0 my-8' />
+
+			}
+			{
+				InfoMessage() && !loading && <p className='text-center my-8 font-medium'>
+					<Image src={sadIcon} width={40} height={40} alt='' className='mx-auto my-4 dark:invert' />
+					{InfoMessage()}
+				</p>
 			}
 			{
 				companies && companies.length > 0 && !loading && !error && (
@@ -56,7 +64,7 @@ export default function BuscadorEmpresas () {
 											width={100} height={100}
 											alt={`${company.name} logo`} />
 										<h3 className='text-xl my-1 font-medium'>{company.name}</h3>
-										<p className='companyShortDescription max-h-60'>{company.description}</p>
+										<p className='companyShortDescription max-h-60' title={company.description}>{company.description}</p>
 									</section>
 								</Link>
 							))

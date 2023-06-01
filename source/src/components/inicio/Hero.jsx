@@ -21,7 +21,7 @@ export default function Hero () {
 
 				<form className='flex flex-col sm:flex-row gap-2' onSubmit={handleSubmit}>
 					<input type='text' placeholder='Desarrollador, diseñador, mesero...' name='q' className='border px-4 border-gray-300 rounded-md p-2 w-full shrink-[0.6]' />
-					<select name='country' defaultValue='espana' id='country' className='w-full p-1 bg-gray-100 rounded-md'>
+					<select name='country' defaultValue='espana' id='country' className='w-full py-1 px-3 bg-gray-100 rounded-md'>
 						<option value='_' disabled>País</option>
 						{
 							formCountryFilter.map((item, index) => (

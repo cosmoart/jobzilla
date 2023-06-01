@@ -6,9 +6,9 @@ export default function JobCard ({ job }) {
 	const { shortTimeAgo, longTimeAgo, newTime } = useTimeAgo(new Date(job.published))
 
 	return (
-		<li key={job.id} className='p-4 rounded-md border hover:bg-blue-100 transition-colors max-h-48'>
+		<li key={job.id} className='p-4 rounded-md border hover:bg-blue-100 transition-colors overflow-hidden h-max max-h-48'>
 			<Link rel='prefetch' href={`/oferta/${job.id}`} className='flex gap-5 items-center'>
-				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt='' width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-slate-200' />
+				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-slate-200' />
 				<div>
 					<div className='flex gap-3 items-center'>
 						<h2 className='text-xl font-bold'>{job.title}</h2>
@@ -27,7 +27,7 @@ export default function JobCard ({ job }) {
 					<span>{job.experienceMin.value}</span>
 					<span>{job.workDay.value}</span>
 					<span>{job.study.value}</span> */}
-					<p className='jobShortDescription my-2'>{job.requirementMin}</p>
+					<p className='jobShortDescription my-2' title={job.requirementMin}>{job.requirementMin}</p>
 				</div>
 			</Link>
 		</li>

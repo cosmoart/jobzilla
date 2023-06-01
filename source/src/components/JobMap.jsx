@@ -2,8 +2,9 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import iconLocation from '@/assets/icons/icon-location.svg'
-import L from 'leaflet'
+import MapLoadingError from './MapLoadingError'
 import { useEffect, useState } from 'react'
+import L from 'leaflet'
 import axios from 'axios'
 
 export default function JobMap ({ job }) {
@@ -29,16 +30,8 @@ export default function JobMap ({ job }) {
 		iconAnchor: [16, 40]
 	})
 
-	if (loading) {
-		return (
-			<div className='p-4 '>Cargando...</div>
-		)
-	}
-
-	if (error) {
-		return (
-			<div className='p-4 '>Ocurrió un error</div>
-		)
+	if (loading || error) {
+		return <MapLoadingError loading={loading} error={error} />
 	}
 
 	return (

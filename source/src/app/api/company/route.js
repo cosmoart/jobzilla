@@ -1,4 +1,3 @@
-// https://api.infojobs.net/api/8/profile/sdrn:infojobs.net:company_description_plus:adevinta
 import { NextResponse } from 'next/server'
 import axios from 'axios'
 

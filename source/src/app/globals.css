@@ -5,18 +5,30 @@
 * {
 	transition: color 0.1s ease-out, background 0.1s ease-out;
 }
-#map {
-	width: 50vw;
+
+.map {
+	width: 40vw;
 	height: 100%;
 	z-index: 10;
 	position: relative;
 	border-radius: 10px;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+.responsiveGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1rem;
+}
+
 /* ============ INPUT RANGE ========= */
 
 input[type='range'] {
 	-webkit-appearance: none;
+	appearance: none;
 	width: 100%;
 	height: 8px;
 	border-radius: 5px;
@@ -68,6 +80,7 @@ input[type='range']:focus {
 
 ::selection {
 	background: rgb(37 99 235);
+	color: white;
 }
 :focus-visible:not(input, select) {
 	border-radius: 3px;

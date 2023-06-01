@@ -8,7 +8,7 @@ export default function Informacion () {
 				</p>
 
 				<p>
-					Esta web fue hecha para la hackathon de Infojobs y Midudev. El código fuente está disponible en <a className='underline' href='https://github.com/cosmoart/jobzilla' target='_blank' rel='noopener noreferrer'>GitHub</a>. Siéntete libre de revisarlo y contribuir si quieres.
+					Esta web fue hecha para la hackathon de <a href='https://www.infojobs.net' target='_blank' rel='noopener noreferrer'>Infojobs</a> y <a href='https://twitter.com/midudev' target='_blank' rel='noopener noreferrer'>Midudev</a>. El código fuente está disponible en <a className='underline' href='https://github.com/cosmoart/jobzilla' target='_blank' rel='noopener noreferrer'>GitHub</a>. Siéntete libre de revisarlo y contribuir si quieres.
 					¡Espero que esta web sea útil para todos los visitantes y ayude a conectar a personas con nuevas y emocionantes oportunidades laborales!
 				</p>
 			</div>

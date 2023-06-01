@@ -24,20 +24,11 @@ export default function NavBar () {
 		const navbar = document.querySelector('header')
 		if (pathname === '/') {
 			navbar.classList.remove('darkHeader')
-			function handleScroll () {
-				const scrollY = window.scrollY
-				navbar.classList.toggle('darkHeader', scrollY > 500)
-			}
-
-			window.addEventListener('scroll', handleScroll)
-			return () => window.removeEventListener('scroll', handleScroll)
-		} else {
-			navbar.classList.add('darkHeader')
-		}
+		} else navbar.classList.add('darkHeader')
 	}, [pathname])
 
 	return (
-		<header className='group darkHeader shadow sticky top-0 z-40 backdrop-blur '>
+		<header className='group darkHeader shadow backdrop-blur '>
 			<nav className='mx-auto max-w-6xl'>
 				<div className='flex relative gap-5 py-4 px-4 xl:px-0 justify-center items-center font-normal'>
 					<Link href='/'>
