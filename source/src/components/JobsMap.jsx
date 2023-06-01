@@ -18,17 +18,17 @@ export default function JobsMap ({ jobs }) {
 	const [error, setError] = useState(false)
 	const [markers, setMarkers] = useState([])
 
-	// useEffect(() => {
-	// 	setLoading(true)
-	// 	axios('/api/locations', {
-	// 		params: {
-	// 			jobs: JSON.stringify(jobsLocations)
-	// 		}
-	// 	})
-	// 		.then(res => setMarkers(res.data))
-	// 		.catch(() => setError(true))
-	// 		.finally(() => setLoading(false))
-	// }, [])
+	useEffect(() => {
+		setLoading(true)
+		axios('/api/locations', {
+			params: {
+				jobs: JSON.stringify(jobsLocations)
+			}
+		})
+			.then(res => setMarkers(res.data))
+			.catch(() => setError(true))
+			.finally(() => setLoading(false))
+	}, [])
 
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,

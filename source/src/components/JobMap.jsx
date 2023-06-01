@@ -15,17 +15,17 @@ export default function JobMap ({ job }) {
 	const [error, setError] = useState(false)
 	const [cords, setCords] = useState([0, 0])
 
-	// useEffect(() => {
-	// 	setLoading(true)
-	// 	axios('/api/location', {
-	// 		params: {
-	// 			location: `${job.city}, ${job.province.value}, ${job.country.value ?? 'España'}`
-	// 		}
-	// 	})
-	// 		.then(res => setCords(res.data))
-	// 		.catch(() => setError(true))
-	// 		.finally(() => setLoading(false))
-	// }, [])
+	useEffect(() => {
+		setLoading(true)
+		axios('/api/location', {
+			params: {
+				location: `${job.city}, ${job.province.value}, ${job.country.value ?? 'España'}`
+			}
+		})
+			.then(res => setCords(res.data))
+			.catch(() => setError(true))
+			.finally(() => setLoading(false))
+	}, [])
 
 	const locationIcon = L.icon({
 		iconUrl: iconLocation.src,
