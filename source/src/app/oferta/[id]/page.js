@@ -1,3 +1,4 @@
+import Error from '@/components/Error'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -17,24 +18,30 @@ export default async function Job ({ params }) {
 	const job = await fetchJob(id)
 
 	if (job.error) {
-		return <div>Ha ocurrido un error</div>
+		return <Error />
 	}
 
 	return (
-		<main className='flex mt-8'>
-			<div className='max-w-5xl px-3'>
-				<div>
+		<main className='flex max-w-7xl mx-auto'>
+			<div className='max-w-6xl px-4'>
+				<div className='headerGrid'>
 					{
-						job.profile?.headerImageUrl && <div className='w-full relative h-48'>
-							<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover aspect-square relative' />
+						job.profile?.headerImageUrl && <div className='w-full relative h-48 headerHeroIMG'>
+							<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover' />
 						</div>
 					}
-					<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={50} height={50} className='rounded-full aspect-square' />
-					<strong>{job.profile.name}</strong>
+					<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className='headerLogo w-full rounded-md ring-2 ring-slate-200 aspect-square z-10' />
+					<div className='flex items-center justify-between headerDescription p-3'>
+						<div className='flex flex-col'>
+							<strong className='font-semibold'>{job.profile.name}</strong>
+							<h1 className='text-xl font-bold my-1'>{job.title}</h1>
+						</div>
+						<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block hover:bg-blue-600 text-center text-white'>Aplicar</a>
+
+					</div>
 				</div>
 				<div className='flex-grow basis-0'>
-					<h1 className='text-xl font-bold my-4'>{job.title}</h1>
-					<p className='whitespace-pre-line'>{job.profile.description}</p>
+					<div className='mb-20 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.profile.description }} />
 					<span>
 						Experiencia minima: {job.experienceMin.value}
 					</span>
@@ -42,11 +49,9 @@ export default async function Job ({ params }) {
 						Categoria: {job.subcategory.value} - {job.category.value}
 					</span>
 					<p className='font-bold'>{job.city}, {job.province.value}, {job.country.value}</p>
-					<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-3 bg-blue-500 rounded uppercase block text-center text-white'>Aplicar</a>
-					<strong>La ubicación en el mapa no es exacta, es un aproximado.</strong>
 				</div>
 			</div>
-			<div className='flex-grow basis-0'>
+			<div className='flex-grow basis-0 flex  h-[90vh]'>
 				<JobMap job={job} />
 			</div>
 		</main>

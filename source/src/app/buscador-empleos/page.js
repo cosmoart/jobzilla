@@ -12,8 +12,8 @@ const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
 export default function BuscadorEmpleos () {
 	const [params, setParams] = useState({})
 	const [data, loading, error] = useFetchData('/api/jobs', params)
-
 	const [formGrid, setFormGrid] = useState(1)
+	console.log(loading, error)
 	return (
 		<main className='section items-center justify-between p-3 flex-grow basis-0' data-dark-header='true'>
 

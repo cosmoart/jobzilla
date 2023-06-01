@@ -46,7 +46,7 @@ export default function Empresa () {
 					</div>
 				</div>
 			</a>
-			< div className='mb-20 max-w-3xl' dangerouslySetInnerHTML={{ __html: companyInfo.description }} />
+			<div className='mb-20 max-w-3xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: companyInfo.description }} />
 			{
 				companyInfo.media && companyInfo.media.length > 0 && (
 					<>

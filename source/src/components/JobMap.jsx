@@ -4,10 +4,13 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import iconLocation from '@/assets/icons/icon-location.svg'
 import MapLoadingError from './MapLoadingError'
 import { useEffect, useState } from 'react'
+import simpleArrowIcon from '@/assets/icons/simple-arrow.svg'
 import L from 'leaflet'
 import axios from 'axios'
+import Image from 'next/image'
 
 export default function JobMap ({ job }) {
+	const [showMap, setShowMap] = useState(true)
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
 	const [cords, setCords] = useState([0, 0])
@@ -30,18 +33,26 @@ export default function JobMap ({ job }) {
 		iconAnchor: [16, 40]
 	})
 
-	if (loading || error) {
-		return <MapLoadingError loading={loading} error={error} />
-	}
-
 	return (
-		<MapContainer center={[cords.lat, cords.lon]} zoom={6} id='map'>
-			<TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-			<Marker position={[cords.lat, cords.lon]} icon={locationIcon}>
-				<Popup>
-					{location.city}, {location.province}, {location.country}
-				</Popup>
-			</Marker>
-		</MapContainer>
+		<div className='relative min-w-[1rem]'>
+			<div className={`h-full ${showMap ? '' : 'hidden'}`}>
+				{
+					loading || error
+						? <MapLoadingError loading={loading} error={error} />
+						: <MapContainer center={[cords.lat, cords.lon]} zoom={6} id='map'>
+							<TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+							<Marker position={[cords.lat, cords.lon]} icon={locationIcon}>
+								<Popup>
+									{location.city}, {location.province}, {location.country}
+								</Popup>
+							</Marker>
+						</MapContainer>
+				}
+			</div>
+			<strong className={`${showMap ? '' : 'hidden'} absolute bottom-0 z-10 font-semibold text-xs bg-white p-1 rounded-tr-md`}>La ubicación en el mapa es un aproximado.</strong>
+			<button className='bg-slate-100 absolute top-1/2 left-0 z-20 -translate-y-1/2 rounded-r-md hover:bg-slate-200 py-2 px-[2px]' type='button' onClick={() => setShowMap(!showMap)} title={showMap ? 'Ocultar mapa' : 'Mostrar mapa'}>
+				<Image src={simpleArrowIcon} width={10} height={10} alt='' className={` transition-transform ${showMap ? '' : 'rotate-180'}`} />
+			</button>
+		</div>
 	)
 }

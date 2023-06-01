@@ -36,7 +36,7 @@ export default function NavBar () {
 					</Link>
 					<div className={`flex-grow flex justify-end ${screenWidth < 924 ? '' : 'hidden'}`}>
 						<button className='group-[&.darkHeader]:text-slate-900 text-white hover:text-blue-600'>
-							<Image src={menuIcon} alt='Menu icon' width={30} height={30} onClick={() => setShowMenu(!showMenu)} />
+							<Image src={menuIcon} className='group-[&.darkHeader]:invert' alt='Menu icon' width={30} height={30} onClick={() => setShowMenu(!showMenu)} />
 						</button>
 					</div>
 					<div className={`flex shadow md:shadow-none items-center gap-5 rounded-md flex-grow top-0 ${screenWidth < 924 ? 'flex-col absolute transition-all items-end px-5 py-2 right-0 bg-white' : ''} ${screenWidth < 924 && (showMenu ? 'top-14	opacity-100' : 'opacity-0 pointer-events-none -z-10')}`}>

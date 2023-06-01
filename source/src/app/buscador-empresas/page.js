@@ -21,11 +21,13 @@ export default function BuscadorEmpresas () {
 			axios('/api/companies', {
 				params: {
 					search: formData.get('search')
-				},
-				timeout: 2000
+				}
 			})
 				.then(res => setCompanies(res.data.items))
-				.catch(() => setError(true))
+				.catch((err) => {
+					setError(true)
+					console.log(err)
+				})
 				.finally(() => setloading(false))
 		}
 	}
