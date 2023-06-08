@@ -36,12 +36,12 @@ export default function BuscadorEmpresas () {
 		if (error) return 'Ha ocurrido un error'
 		if (companies?.length === 0 && !loading && !error && companies !== null) return 'No se han encontrado resultados'
 	}
-
+	console.log(companies)
 	return (
 		<main>
 			<h1 className='text-lg md:text-2xl my-6 text-center font-semibold'>Buscador de empresas</h1>
 			<form onSubmit={handleSubmit} className='flex flex-col px-4 sm:flex-row gap-4 items-center justify-center max-w-4xl mx-auto'>
-				<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full sm:w-auto  py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' required />
+				<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full sm:w-auto  py-2 px-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' required />
 				<button type='submit' className={`${loading ? 'bg-slate-700 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} w-full sm:w-auto py-2 px-6  text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50`} disabled={loading}>Buscar</button>
 			</form>
 			{

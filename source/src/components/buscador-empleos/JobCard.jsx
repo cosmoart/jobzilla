@@ -6,7 +6,7 @@ export default function JobCard ({ job }) {
 	const { shortTimeAgo, longTimeAgo, newTime } = useTimeAgo(new Date(job.published))
 
 	return (
-		<li key={job.id} className='p-4 rounded-md border hover:bg-blue-100 transition-colors overflow-hidden h-max max-h-48'>
+		<li key={job.id} className='p-4 rounded-md border dark:border-slate-500 hover:bg-blue-100 dark:hover:bg-slate-600 transition-colors overflow-hidden h-max min-h-full'>
 			<Link rel='prefetch' href={`/oferta/${job.id}`} className='flex gap-5 items-center'>
 				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-slate-200' />
 				<div>

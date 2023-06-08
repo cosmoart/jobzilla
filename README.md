@@ -72,6 +72,7 @@ This is a project for the Infojobs Hackathon 2023. The app is built with Next.js
 * [Vercel](https://vercel.com/) For hosting
 * [Tailwind CSS](https://tailwindcss.com/) For styling
 * [Figma](https://www.figma.com/) For the design
+* [Pexels](https://www.pexels.com) For the images
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
 

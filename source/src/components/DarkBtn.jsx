@@ -9,7 +9,13 @@ export default function DarkBtn () {
 	const [darkMode, setDarkMode] = useState(false)
 
 	useEffect(() => {
+		const localDarkMode = localStorage.getItem('darkMode')
+		setDarkMode(localDarkMode ? localDarkMode === 'true' : window.matchMedia('(prefers-color-scheme: dark)').matches)
+	}, [])
+
+	useEffect(() => {
 		document.documentElement.classList.toggle('dark', darkMode)
+		localStorage.setItem('darkMode', darkMode)
 	}, [darkMode])
 
 	return (

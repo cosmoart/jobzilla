@@ -18,20 +18,39 @@
 	display: grid;
 	grid-template-columns: 0.27fr 1.8fr;
 	grid-template-rows: 1.8fr 0.6fr 1.1fr;
-	gap: 0px 0px;
+	grid-auto-flow: row;
+}
+
+.companyGrid {
+	display: grid;
+	grid-template-columns: 0.35fr 1.3fr;
+	grid-template-rows: 1.8fr 0.6fr 1.1fr;
 	grid-auto-flow: row;
 }
 
 .headerLogo {
-	grid-area: 2 / 1 / 4 / 2;
+	grid-area: 2 / 1 / 2 / 2;
 }
-
 .headerHeroIMG {
 	grid-area: 1 / 1 / 3 / 3;
+	height: 100%;
+}
+.headerDescription {
+	grid-area: 3 / 1 / 4 / 3;
 }
 
-.headerDescription {
-	grid-area: 3 / 2 / 4 / 3;
+@media (min-width: 768px) {
+	.headerLogo {
+		grid-area: 2 / 1 / 4 / 2;
+	}
+
+	.headerHeroIMG {
+		grid-area: 1 / 1 / 3 / 3;
+	}
+
+	.headerDescription {
+		grid-area: 3 / 2 / 4 / 3;
+	}
 }
 
 html {
@@ -40,7 +59,7 @@ html {
 
 .responsiveGrid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	grid-gap: 1rem;
 }
 
@@ -57,7 +76,9 @@ input[type='range'] {
 	-webkit-transition: 0.2s;
 	transition: opacity 0.2s;
 }
-
+.dark input[type='range'] {
+	background: white;
+}
 input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
@@ -133,13 +154,17 @@ input[type='range']:focus {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-	background: gray;
+	background: white;
+	border: 3px solid #1f2937;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-	background: rgb(255, 255, 255);
+	background: gray;
 }
 
+#scrollX {
+	scroll-behavior: smooth;
+}
 #scrollX::-webkit-scrollbar {
 	height: 10px;
 	opacity: 0.5;

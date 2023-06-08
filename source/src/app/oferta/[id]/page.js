@@ -26,9 +26,11 @@ export default async function Job ({ params }) {
 			<div className='max-w-6xl px-4'>
 				<div className='headerGrid'>
 					{
-						job.profile?.headerImageUrl && <div className='w-full relative h-48 headerHeroIMG'>
-							<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover' />
-						</div>
+						job.profile?.headerImageUrl && (
+							<div className='w-full relative h-48 headerHeroIMG'>
+								<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover' />
+							</div>
+						)
 					}
 					<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className='headerLogo w-full rounded-md ring-2 ring-slate-200 aspect-square z-10' />
 					<div className='flex items-center justify-between headerDescription p-3'>
@@ -41,7 +43,6 @@ export default async function Job ({ params }) {
 					</div>
 				</div>
 				<div className='flex-grow basis-0'>
-					<div className='mb-20 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.profile.description }} />
 					<span>
 						Experiencia minima: {job.experienceMin.value}
 					</span>
@@ -49,6 +50,7 @@ export default async function Job ({ params }) {
 						Categoria: {job.subcategory.value} - {job.category.value}
 					</span>
 					<p className='font-bold'>{job.city}, {job.province.value}, {job.country.value}</p>
+					<div className='mb-24 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.profile.description }} />
 				</div>
 			</div>
 			<div className='flex-grow basis-0 flex h-[90vh]'>

@@ -28,7 +28,7 @@ export default function NavBar () {
 	}, [pathname])
 
 	return (
-		<header className='group darkHeader shadow backdrop-blur '>
+		<header className='group darkHeader shadow backdrop-blur sticky top-0 w-full'>
 			<nav className='mx-auto max-w-6xl'>
 				<div className='flex relative gap-5 py-4 px-4 xl:px-0 justify-center items-center font-normal'>
 					<Link href='/'>
@@ -44,9 +44,9 @@ export default function NavBar () {
 						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
 						<Link href='/informacion' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Información</Link>
 						<div className='flex gap-2 md:gap-4 ml-auto' >
-							{/* <div className='flex-grow flex justify-end'>
+							<div className='flex-grow flex justify-end'>
 								<DarkBtn />
-							</div> */}
+							</div>
 							<div>
 								<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block rounded-full'></a>
 							</div>

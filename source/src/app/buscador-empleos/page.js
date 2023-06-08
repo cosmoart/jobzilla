@@ -13,7 +13,7 @@ export default function BuscadorEmpleos () {
 	const [params, setParams] = useState({})
 	const [data, loading, error] = useFetchData('/api/jobs', params)
 	const [formGrid, setFormGrid] = useState(1)
-	console.log(loading, error)
+
 	return (
 		<main className='section items-center justify-between p-3 flex-grow basis-0' data-dark-header='true'>
 
@@ -30,11 +30,11 @@ export default function BuscadorEmpleos () {
 					{
 						loading && [1, 2, 3, 4, 5].map((_, i) => (
 							<li key={i} className='p-4 rounded-md border animate-pulse flex gap-4'>
-								<div className=' bg-gray-300 rounded w-16 h-16 aspect-square'></div>
+								<div className=' bg-slate-300 rounded w-16 h-16 aspect-square'></div>
 								<div className='w-full'>
-									<div className='h-4 bg-gray-300 rounded w-3/4'></div>
-									<div className='h-4 bg-gray-300 rounded w-1/4 mt-2'></div>
-									<div className='h-12 bg-gray-300 rounded w-1/2 mt-2'></div>
+									<div className='h-4 bg-slate-300 rounded w-3/4'></div>
+									<div className='h-4 bg-slate-300 rounded w-1/4 mt-2'></div>
+									<div className='h-12 bg-slate-300 rounded w-1/2 mt-2'></div>
 								</div>
 							</li>
 						))
@@ -49,7 +49,7 @@ export default function BuscadorEmpleos () {
 					}
 				</ul>
 				{
-					loading && <div className='w-[40vw] bg-gray-300 rounded h-full animate-pulse'></div>
+					loading && <div className='w-[40vw] bg-slate-300 rounded h-full animate-pulse'></div>
 				}
 				{
 					!loading && !error && data.items.length > 0 && <JobsMap jobs={data.items} />

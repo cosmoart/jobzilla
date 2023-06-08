@@ -1,6 +1,6 @@
 export default function Informacion () {
 	return (
-		<div className='py-6 mx-auto max-w-6xl px-6'>
+		<div className='py-6 mx-auto max-w-6xl px-6 xl:px-0 mb-28'>
 			<h1 className='text-2xl md:text-3xl font-semibold my-3'>Información</h1>
 			<div className='flex flex-col gap-3 max-w-4xl'>
 				<p>
