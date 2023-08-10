@@ -1,5 +1,6 @@
 'use client'
 
+import ErrorMessage from '@/components/ErrorMessage'
 import useFetchData from '@/hooks/useFetchdata'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
@@ -13,21 +14,19 @@ export default function Empresa () {
 	if (companyLoading) {
 		return (
 			<div className='relative max-w-3xl mx-auto px-6 lg:px-0 w-full animate-pulse' >
-				<div className='bg-slate-300 rounded w-full h-[300px]'></div>
-				<div className=' bg-slate-300 rounded w-52 h-52 ring-4 ring-white absolute top-[32%]'></div>
+				<div className='bg-slate-300 dark:bg-slate-500 rounded w-full h-[300px]'></div>
+				<div className=' bg-slate-300 dark:bg-slate-500 rounded w-52 h-52 ring-4 dark:ring-slate-400	 ring-white absolute top-[32%]'></div>
 				<div className='w-full ml-56 mt-4'>
-					<div className='h-5 bg-slate-300 rounded w-1/4 mt-2'></div>
-					<div className='h-5 bg-slate-300 rounded w-1/5 mt-2'></div>
-					<div className='h-5 bg-slate-300 rounded w-1/5 mt-2'></div>
+					<div className='h-5 bg-slate-300 dark:bg-slate-500 rounded w-1/4 mt-2'></div>
+					<div className='h-5 bg-slate-300 dark:bg-slate-500 rounded w-1/5 mt-2'></div>
+					<div className='h-5 bg-slate-300 dark:bg-slate-500 rounded w-1/5 mt-2'></div>
 				</div>
-				<div className='bg-slate-300 rounded w-full h-52 mt-14'></div>
+				<div className='bg-slate-300 dark:bg-slate-500 rounded w-full h-52 mt-14'></div>
 			</div >
 		)
 	}
 
-	if (companyError || !companyInfo) {
-		return <p className='m-8'>Ooops! Ha ocurrido un error, intentalo de nuevo más tarde</p>
-	}
+	if (companyError || !companyInfo) return <ErrorMessage />
 
 	return (
 		<div className='max-w-4xl mx-auto px-6 w-full mb-20'>
@@ -60,7 +59,7 @@ export default function Empresa () {
 								<div key={i} className='relative mb-4'>
 									{
 										media.type === 'IMAGE' && (
-											<Image src={media.url} alt={'Imagen ' + i} width={800} height={400} />
+											<Image src={media.url} alt={'Imagen ' + i} width={800} height={400} className='rounded' />
 										)
 									}
 									{

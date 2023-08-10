@@ -16,7 +16,7 @@ export async function GET (request) {
 		}
 	})
 		.then(res => res.data)
-		.catch(err => err)
+	// .catch(() => { error: true, message: 'Error fetching data' })
 
 	return NextResponse.json(companies)
 }

@@ -28,7 +28,7 @@ export default function NavBar () {
 	}, [pathname])
 
 	return (
-		<header className='group darkHeader shadow backdrop-blur sticky top-0 w-full'>
+		<header className='group darkHeader shadow backdrop-blur sticky top-0 w-full z-40'>
 			<nav className='mx-auto max-w-6xl'>
 				<div className='flex relative gap-5 py-4 px-4 xl:px-0 justify-center items-center font-normal'>
 					<Link href='/'>
@@ -42,7 +42,6 @@ export default function NavBar () {
 					<div className={`flex shadow md:shadow-none items-center gap-5 rounded-md flex-grow top-0 ${screenWidth < 924 ? 'flex-col absolute transition-all items-end px-5 py-2 right-0 bg-white' : ''} ${screenWidth < 924 && (showMenu ? 'top-14	opacity-100' : 'opacity-0 pointer-events-none -z-10')}`}>
 						<Link href='/buscador-empleos' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empleos</Link>
 						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
-						<Link href='/informacion' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Información</Link>
 						<div className='flex gap-2 md:gap-4 ml-auto' >
 							<div className='flex-grow flex justify-end'>
 								<DarkBtn />

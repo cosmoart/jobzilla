@@ -31,7 +31,6 @@ export default function Form ({ setParams }) {
 
 	function handleSubmit (e) {
 		e.preventDefault()
-		console.log(filters)
 		setParams(filters)
 	}
 

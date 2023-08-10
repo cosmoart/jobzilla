@@ -5,7 +5,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import loaderIcon from '@/assets/icons/loader.svg'
-import sadIcon from '@/assets/icons/sad.svg'
+import ErrorMessage from '@/components/ErrorMessage'
 
 export default function BuscadorEmpresas () {
 	const [companies, setCompanies] = useState(null)
@@ -15,8 +15,8 @@ export default function BuscadorEmpresas () {
 	function handleSubmit (e) {
 		e.preventDefault()
 		const formData = new FormData(e.target)
-		setloading(true)
 
+		setloading(true)
 		if (formData.get('search').length > 0) {
 			axios('/api/companies', {
 				params: {
@@ -24,35 +24,26 @@ export default function BuscadorEmpresas () {
 				}
 			})
 				.then(res => setCompanies(res.data.items))
-				.catch((err) => {
-					setError(true)
-					console.log(err)
-				})
+				.catch(() => setError(true))
 				.finally(() => setloading(false))
 		}
 	}
 
-	const InfoMessage = () => {
-		if (error) return 'Ha ocurrido un error'
-		if (companies?.length === 0 && !loading && !error && companies !== null) return 'No se han encontrado resultados'
-	}
-	console.log(companies)
+	const errorText = error ? 'Ha ocurrido un error' : companies?.length === 0 && companies !== null ? 'No se han encontrado resultados' : ''
+
 	return (
 		<main>
 			<h1 className='text-lg md:text-2xl my-6 text-center font-semibold'>Buscador de empresas</h1>
 			<form onSubmit={handleSubmit} className='flex flex-col px-4 sm:flex-row gap-4 items-center justify-center max-w-4xl mx-auto'>
-				<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full sm:w-auto  py-2 px-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' required />
-				<button type='submit' className={`${loading ? 'bg-slate-700 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} w-full sm:w-auto py-2 px-6  text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50`} disabled={loading}>Buscar</button>
+				<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full sm:w-auto  py-2 px-4 border dark:text-slate-900 border-slate-300 rounded-lg focus:outline-none focus:ring-2 flex-grow focus:ring-blue-600 focus:border-transparent z-10' required />
+				<button type='submit' className={`${loading ? 'bg-blue-900 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} w-full sm:w-auto py-2 px-6  text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50`} disabled={loading}>Buscar</button>
 			</form>
 			{
 				loading && <Image src={loaderIcon} width={30} height={30} alt='Cargando...' className='mx-auto invert dark:invert-0 my-8' />
 
 			}
 			{
-				InfoMessage() && !loading && <p className='text-center my-8 font-medium'>
-					<Image src={sadIcon} width={40} height={40} alt='' className='mx-auto my-4 dark:invert' />
-					{InfoMessage()}
-				</p>
+				!loading && errorText && <ErrorMessage message={errorText} />
 			}
 			{
 				companies && companies.length > 0 && !loading && !error && (

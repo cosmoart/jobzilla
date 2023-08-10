@@ -11,7 +11,6 @@ export default function useFetchData (url, params) {
 		setError(false)
 		axios(url, { params })
 			.then(res => {
-				console.log(res)
 				if (res.data.status >= 400 || res.data.status === null) return setError(true)
 				setData(res.data)
 			})

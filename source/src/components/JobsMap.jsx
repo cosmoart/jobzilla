@@ -25,7 +25,10 @@ export default function JobsMap ({ jobs }) {
 				jobs: JSON.stringify(jobsLocations)
 			}
 		})
-			.then(res => setMarkers(res.data))
+			.then(res => {
+				console.log(res)
+				setMarkers(res.data)
+			})
 			.catch(() => setError(true))
 			.finally(() => setLoading(false))
 	}, [])
@@ -35,6 +38,8 @@ export default function JobsMap ({ jobs }) {
 		iconSize: [30, 40],
 		iconAnchor: [16, 40]
 	})
+
+	console.log(error, loading, markers)
 
 	return (
 		<div className='relative min-w-[1rem]'>

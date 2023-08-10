@@ -1,4 +1,4 @@
-import Error from '@/components/Error'
+import Error from '@/components/ErrorMessage'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'

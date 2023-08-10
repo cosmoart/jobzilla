@@ -18,11 +18,9 @@ export async function GET (request) {
 				lat: res.data.features[0].center[1]
 			}
 		})
-		.catch(err => {
-			if (err.response.status === 404) {
-				return { lon: Math.random() * 2 - 1, lat: Math.random() * 2 - 1 }
-			}
-			throw err
+		.catch(() => {
+			return { lon: Math.random() * 2 - 1, lat: Math.random() * 2 - 1 }
+			// throw err
 		})
 
 	return NextResponse.json(coords)
