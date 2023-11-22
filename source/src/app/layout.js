@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/provider/theme-provider'
 import NavBar from '@/components/NavBar'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
@@ -44,11 +45,18 @@ export default function RootLayout ({ children }) {
 				<link rel='stylesheet' href='https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css' />
 			</head>
 			<body className={`${inter.className} dark:bg-slate-700 text-slate-950 dark:text-white min-h-screen flex flex-col`}>
-				<NavBar />
-				<div className='flex-grow'>
-					{children}
-				</div>
-				<Footer />
+				<ThemeProvider
+					attribute='class'
+					defaultTheme='system'
+					enableSystem
+					disableTransitionOnChange
+				>
+					<NavBar />
+					<div className='flex-grow'>
+						{children}
+					</div>
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	)

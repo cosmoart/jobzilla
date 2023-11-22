@@ -18,14 +18,12 @@ export async function GET (request) {
 			timeout: timeOut
 		})
 			.then(res => {
-				console.log(res.data)
 				return {
 					lon: res.data.features[0].center[0],
 					lat: res.data.features[0].center[1]
 				}
 			})
 			.catch(() => {
-				console.log(job)
 				return { lon: Math.random() * 2 - 1, lat: Math.random() * 2 - 1 }
 			})
 

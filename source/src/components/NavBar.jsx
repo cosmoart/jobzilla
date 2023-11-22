@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import DarkBtn from './DarkBtn'
+import ThemeToggle from './ThemeToggle'
 import menuIcon from '@/assets/icons/menu.svg'
 import closeIcon from '@/assets/icons/close.svg'
 import { useEffect, useState } from 'react'
@@ -44,7 +44,7 @@ export default function NavBar () {
 						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
 						<div className='flex gap-2 md:gap-4 ml-auto' >
 							<div className='flex-grow flex justify-end'>
-								<DarkBtn />
+								<ThemeToggle />
 							</div>
 							<div>
 								<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block rounded-full'></a>
