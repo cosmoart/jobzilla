@@ -2,21 +2,24 @@ import { NextResponse } from 'next/server'
 import axios from 'axios'
 
 export async function GET (request) {
-	const url = new URL(request.url)
-	const params = Object.fromEntries(new URLSearchParams(url.search))
+	const { searchParams } = new URL(request.url)
+	const id = searchParams.get('id')
+	const params = Object.fromEntries(new URLSearchParams(searchParams.toString()))
 
-	const jobs = await axios('https://api.infojobs.net/api/9/offer', {
+	if (!id && !params) return NextResponse.json({ error: true, message: 'No id or params provided' }, { status: 400 })
+	const url = id ? `https://api.infojobs.net/api/9/offer/${id}` : 'https://api.infojobs.net/api/9/offer'
+
+	const job = await axios(url, {
 		headers: {
 			'Content-Type': 'application/json',
 			Authorization: `Basic ${process.env.INFOJOBS_TOKEN}`
 		},
 		params: {
-			...params,
-			order: 'relevancia-desc'
+			...params
 		}
 	})
 		.then(res => res.data)
-		.catch(err => err)
+		.catch(err => { return { error: true, message: err } })
 
-	return NextResponse.json(jobs)
+	return NextResponse.json(job)
 }

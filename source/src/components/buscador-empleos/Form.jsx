@@ -43,7 +43,7 @@ export default function Form ({ setParams }) {
 
 	return (
 		<form
-			className='grid gap-3 px-6 md:px-0 mx-auto max-w-6xl'
+			className='grid gap-3 px-6 md:px-0 mx-auto max-w-7xl'
 			onSubmit={handleSubmit}>
 			<fieldset className='flex gap-3 flex-col md:flex-row'>
 				<legend className='hidden'>Busca por palabras clave y lugar</legend>

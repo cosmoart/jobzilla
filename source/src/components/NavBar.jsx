@@ -29,9 +29,9 @@ export default function NavBar () {
 
 	return (
 		<header className='group darkHeader shadow backdrop-blur sticky top-0 w-full z-40'>
-			<nav className='mx-auto max-w-6xl'>
-				<div className='flex relative gap-5 py-4 px-4 xl:px-0 justify-center items-center font-normal'>
-					<Link href='/'>
+			<nav className='mx-auto max-w-7xl'>
+				<div className='flex relative gap-5 py-4 px-6 2xl:px-0 justify-center items-center font-normal'>
+					<Link href='/' className='pr-4'>
 						<Image className='group-[&.darkHeader]:invert' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
 					</Link>
 					<div className={`flex-grow flex justify-end ${screenWidth < 924 ? '' : 'hidden'}`}>
@@ -40,14 +40,14 @@ export default function NavBar () {
 						</button>
 					</div>
 					<div className={`flex shadow md:shadow-none items-center gap-5 rounded-md flex-grow top-0 ${screenWidth < 924 ? 'flex-col absolute transition-all items-end px-5 py-2 right-0 bg-white' : ''} ${screenWidth < 924 && (showMenu ? 'top-14	opacity-100' : 'opacity-0 pointer-events-none -z-10')}`}>
-						<Link href='/buscador-empleos' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empleos</Link>
-						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Empresas</Link>
+						<Link href='/buscador-empleos' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Buscar empleos</Link>
+						<Link href='/buscador-empresas' className='hover:text-blue-600 text-white group-[&.darkHeader]:text-slate-900'>Buscar empresas</Link>
 						<div className='flex gap-2 md:gap-4 ml-auto' >
 							<div className='flex-grow flex justify-end'>
 								<ThemeToggle />
 							</div>
 							<div>
-								<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block rounded-full'></a>
+								<a href={AuthURL} target='_blank' rel='noopener noreferrer' className='bg-blue-500 w-8 aspect-square block hover:bg-blue-600 rounded-full'></a>
 							</div>
 						</div>
 					</div>

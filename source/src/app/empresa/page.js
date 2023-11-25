@@ -9,7 +9,7 @@ import { useState } from 'react'
 export default function Empresa () {
 	const searchParams = useSearchParams()
 	const [params] = useState({ sdrn: searchParams.get('sdrn') })
-	const [companyInfo, companyLoading, companyError] = useFetchData('/api/company', params)
+	const [companyInfo, companyLoading, companyError] = useFetchData('/api/companies', params)
 
 	if (companyLoading) {
 		return (
@@ -25,11 +25,11 @@ export default function Empresa () {
 			</div >
 		)
 	}
-
+	console.log(companyInfo)
 	if (companyError || !companyInfo) return <ErrorMessage />
 
 	return (
-		<div className='max-w-4xl mx-auto px-6 w-full mb-20'>
+		<div className='max-w-5xl mx-auto px-6 2xl:px-0 w-full mb-20'>
 
 			<a href={companyInfo.corporativeWebUrl} className='companyGrid mb-10' target='_blank' rel='noopener noreferrer'>
 				{

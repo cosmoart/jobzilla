@@ -5,7 +5,7 @@ import Image from 'next/image'
 const JobMap = dynamic(() => import('@/components/JobMap'), { ssr: false })
 
 const fetchJob = async (id) => {
-	return await axios(`${process.env.FETCH_URL}/api/job?id=${id}`, { cache: 'no-store' })
+	return await axios(`${process.env.FETCH_URL}/api/jobs?id=${id}`, { cache: 'no-store' })
 		.then(res => {
 			if (res.data.status >= 400) return { error: true }
 			return res.data
@@ -23,7 +23,7 @@ export default async function Job ({ params }) {
 
 	return (
 		<main className='flex max-w-7xl mx-auto'>
-			<div className='max-w-6xl px-4'>
+			<div className='max-w-7xl px-4'>
 				<div className='headerGrid'>
 					{
 						job.profile?.headerImageUrl && (

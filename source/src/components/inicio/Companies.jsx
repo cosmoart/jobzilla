@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Companies () {
 	return (
-		<section className='mx-auto max-w-6xl px-6 lg:px-0'>
+		<section className='mx-auto max-w-7xl px-6 lg:px-0'>
 			<h2 className='text-2xl text-center font-semibold my-4'>Empresas</h2>
 			<div className='responsiveGrid gap-4 justify-center flex-wrap'>
 				{

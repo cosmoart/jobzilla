@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Filters () {
 	return (
-		<section className='mb-36 mt-24 mx-auto max-w-6xl px-6 lg:px-0'>
+		<section className='mb-36 mt-24 mx-auto max-w-7xl px-6 lg:px-0'>
 
 			<div>
 				<div className='flex justify-between items-center'>

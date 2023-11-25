@@ -1,0 +1,200 @@
+* {
+	transition: color 0.1s ease-out, background 0.1s ease-out;
+}
+.empresas-main {
+	position: relative;
+}
+
+.empresas-main::after,
+.empresas-main::before {
+	content: '';
+	position: absolute;
+	width: calc(100% - 48px);
+	border-radius: 0 0 0.5rem 0.5rem;
+	height: 13.2rem;
+	top: 0;
+}
+
+.empresas-main::after {
+	background-image: url('https://images.pexels.com/photos/618079/pexels-photo-618079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-size: cover;
+	z-index: -2;
+}
+
+.empresas-main::before {
+	background: rgba(100, 100, 100, 0.35);
+	backdrop-filter: blur(5px);
+	z-index: -1;
+	overflow: hidden;
+}
+
+@media (min-width: 1536px) {
+	.empresas-main::after,
+	.empresas-main::before {
+		width: 100%;
+	}
+}
+
+.map {
+	width: 40vw;
+	height: 100%;
+	z-index: 10;
+	position: relative;
+	border-radius: 10px;
+}
+
+.headerGrid {
+	display: grid;
+	grid-template-columns: 0.27fr 1.8fr;
+	grid-template-rows: 1.8fr 0.6fr 1.1fr;
+	grid-auto-flow: row;
+}
+
+.companyGrid {
+	display: grid;
+	grid-template-columns: 0.35fr 1.3fr;
+	grid-template-rows: 1.8fr 0.6fr 1.1fr;
+	grid-auto-flow: row;
+}
+
+.headerLogo {
+	grid-area: 2 / 1 / 2 / 2;
+}
+.headerHeroIMG {
+	grid-area: 1 / 1 / 3 / 3;
+	height: 100%;
+}
+.headerDescription {
+	grid-area: 3 / 1 / 4 / 3;
+}
+
+@media (min-width: 768px) {
+	.headerLogo {
+		grid-area: 2 / 1 / 4 / 2;
+	}
+
+	.headerHeroIMG {
+		grid-area: 1 / 1 / 3 / 3;
+	}
+
+	.headerDescription {
+		grid-area: 3 / 2 / 4 / 3;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.responsiveGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 1rem;
+}
+
+/* ============ INPUT RANGE ========= */
+
+input[type='range'] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 8px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+.dark input[type='range'] {
+	background: white;
+}
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #3b82f6;
+	cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #3b82f6;
+	cursor: pointer;
+}
+
+input[type='range']:focus {
+	outline: none;
+}
+
+/* ============ DESCRIPTION ========= */
+
+.jobShortDescription,
+.companyShortDescription {
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	display: -webkit-box;
+}
+
+.companyShortDescription {
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+}
+
+/* ============ SELECTION - FOCUS ========= */
+
+::selection {
+	background: rgb(37 99 235);
+	color: white;
+}
+:focus-visible:not(input, select) {
+	border-radius: 3px;
+	outline: 4px dashed rgb(99 102 241);
+	outline-offset: 4px;
+}
+
+/* ============ SCROLL-BAR ========= */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	border: 3px solid white;
+	background: rgb(79, 90, 109);
+	transition: background 0.1s ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(47, 51, 66);
+}
+
+.dark ::-webkit-scrollbar-track {
+	background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: white;
+	border: 3px solid #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: gray;
+}
+
+#scrollX {
+	scroll-behavior: smooth;
+}
+#scrollX::-webkit-scrollbar {
+	height: 10px;
+	opacity: 0.5;
+}
