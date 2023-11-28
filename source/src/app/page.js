@@ -1,3 +1,4 @@
+import Attribution from '@/components/inicio/Attribution'
 import Categories from '@/components/inicio/Categories'
 import Companies from '@/components/inicio/Companies'
 import Filters from '@/components/inicio/Filters'
@@ -12,6 +13,7 @@ export default function Home () {
 			<JobsCategories />
 			<Companies />
 			<Filters />
+			<Attribution />
 		</>
 	)
 }

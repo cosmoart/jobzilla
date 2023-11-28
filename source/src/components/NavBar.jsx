@@ -22,9 +22,9 @@ export default function NavBar () {
 
 	useEffect(() => {
 		const navbar = document.querySelector('header')
-		if (pathname === '/') {
-			navbar.classList.remove('darkHeader')
-		} else navbar.classList.add('darkHeader')
+		// if (pathname === '/') {
+		// 	navbar.classList.remove('darkHeader')
+		// } else navbar.classList.add('darkHeader')
 	}, [pathname])
 
 	return (

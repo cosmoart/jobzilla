@@ -13,7 +13,7 @@ export default function Empresa () {
 
 	if (companyLoading) {
 		return (
-			<div className='relative max-w-3xl mx-auto px-6 lg:px-0 w-full animate-pulse' >
+			<div className='relative max-w-5xl mx-auto px-6 lg:px-0 w-full animate-pulse' >
 				<div className='bg-slate-300 dark:bg-slate-500 rounded w-full h-[300px]'></div>
 				<div className=' bg-slate-300 dark:bg-slate-500 rounded w-52 h-52 ring-4 dark:ring-slate-400	 ring-white absolute top-[32%]'></div>
 				<div className='w-full ml-56 mt-4'>
@@ -39,13 +39,15 @@ export default function Empresa () {
 						</div>
 					)
 				}
-				<Image className='headerLogo w-full rounded-md ring-2 ring-slate-200' src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={100} height={100} />
-				<div className='flex headerDescription justify-center flex-col py-4 md:px-4'>
-					<h1 className={`text-2xl font-semibold ${companyInfo.headerImageUrl ? '' : 'inline-block'}`}>
-						{companyInfo.name}
-					</h1>
-					<p className='font-medium inline-block'>{companyInfo.province} - {companyInfo.country}</p>
-					<p className='font-medium inline-block'>Empleados: {companyInfo.workers}</p>
+				<div className='flex gap-4'>
+					<Image className='headerLogo w-28 h-28 -mt-10 ml-5 rounded-md ring-8 ring-white' src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
+					<div className='flex headerDescription justify-center flex-col py-4 md:px-4'>
+						<h1 className={`text-2xl font-semibold ${companyInfo.headerImageUrl ? '' : 'inline-block'}`}>
+							{companyInfo.name}
+						</h1>
+						<p className='font-medium inline-block'>{companyInfo.province} - {companyInfo.country}</p>
+						<p className='font-medium inline-block'>Empleados: {companyInfo.workers}</p>
+					</div>
 				</div>
 			</a>
 
@@ -59,7 +61,7 @@ export default function Empresa () {
 								<div key={i} className='relative mb-4'>
 									{
 										media.type === 'IMAGE' && (
-											<Image src={media.url} alt={'Imagen ' + i} width={800} height={400} className='rounded' />
+											<Image src={media.url} alt={'Imagen ' + i} width={800} height={400} className='rounded w-full' />
 										)
 									}
 									{
