@@ -1,4 +1,9 @@
-* {
+p,
+span,
+h1,
+h2,
+h3,
+h4 {
 	transition: color 0.1s ease-out, background 0.1s ease-out;
 }
 .empresas-main {
@@ -58,6 +63,21 @@ html {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	grid-gap: 1rem;
+}
+
+/* ============ HEADER ========== */
+.homeScrolled {
+	background: white;
+}
+
+.homeScrolled a {
+	color: rgb(15 23 4) !important;
+}
+.homeScrolled .navBarImg {
+	filter: invert(1);
+}
+.homeScrolled .navBarIcon {
+	filter: invert(0);
 }
 
 /* ============ INPUT RANGE ========= */

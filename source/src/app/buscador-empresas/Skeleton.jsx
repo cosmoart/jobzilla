@@ -2,7 +2,7 @@ export default function Skeleton () {
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto mt-12 mb-20'>
 			{
-				Array.from(Array(6).keys()).map((i) => (
+				Array.from(Array(9).keys()).map((i) => (
 					<div key={i} className='animate-pulse bg-slate-200 p-5 rounded-md overflow-hidden'>
 						<section>
 							<div className='flex gap-4 items-center'>

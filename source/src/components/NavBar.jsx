@@ -21,10 +21,24 @@ export default function NavBar () {
 	const pathname = usePathname()
 
 	useEffect(() => {
+		// If pathname is "/" add a scroll event listener to the window object, when header is scrolled 100vh add the homeScrolled class to the header element
 		const navbar = document.querySelector('header')
-		// if (pathname === '/') {
-		// 	navbar.classList.remove('darkHeader')
-		// } else navbar.classList.add('darkHeader')
+		function handleScroll () {
+			if (window.scrollY > window.innerHeight - 200) navbar.classList.add('homeScrolled')
+			else navbar.classList.remove('homeScrolled')
+		}
+
+		if (pathname === '/') window.addEventListener('scroll', handleScroll)
+		return () => {
+			if (pathname === '/') window.removeEventListener('scroll', handleScroll)
+		}
+	}, [pathname])
+
+	useEffect(() => {
+		const navbar = document.querySelector('header')
+		if (pathname === '/') {
+			navbar.classList.remove('darkHeader')
+		} else navbar.classList.add('darkHeader')
 	}, [pathname])
 
 	return (
@@ -32,7 +46,7 @@ export default function NavBar () {
 			<nav className='mx-auto max-w-7xl'>
 				<div className='flex relative gap-5 py-4 px-6 2xl:px-0 justify-center items-center font-normal'>
 					<Link href='/' className='pr-4'>
-						<Image className='group-[&.darkHeader]:invert' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
+						<Image className='group-[&.darkHeader]:invert navBarImg' src='/favicon.svg' alt='Jobzilla logo' width={30} height={30} />
 					</Link>
 					<div className={`flex-grow flex justify-end ${screenWidth < 924 ? '' : 'hidden'}`}>
 						<button className='group-[&.darkHeader]:text-slate-900 text-white hover:text-blue-600'>
