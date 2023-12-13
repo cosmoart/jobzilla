@@ -10,16 +10,17 @@ import ErrorMessage from '@/components/ErrorMessage'
 
 const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
 
-export default function BuscadorEmpleos () {
+export default function BuscadorEmpleos ({ searchParams }) {
 	const [params, setParams] = useState({})
 	const [data, loading, error] = useFetchData('/api/jobs', params)
+	console.log(data, loading, error)
 	const [formGrid, setFormGrid] = useState(1)
 
 	return (
-		<main className='section items-center justify-between p-3 flex-grow basis-0' data-dark-header='true'>
+		<main className='section items-center justify-between p-3 max-w-7xl mx-auto px-6 2xl:px-0 flex-grow basis-0' data-dark-header='true'>
 
-			<Form setParams={setParams} />
-
+			<Form setParams={setParams} actualParams={searchParams} />
+			{/*
 			{
 				!loading
 					? <JobsNavBar data={data} setFormGrid={setFormGrid} />
@@ -55,7 +56,7 @@ export default function BuscadorEmpleos () {
 				{
 					!loading && !error && data.items.length > 0 && <JobsMap jobs={data.items} />
 				}
-			</div>
+			</div> */}
 		</main>
 	)
 }

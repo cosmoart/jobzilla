@@ -1,0 +1,151 @@
+{
+	"region": [
+		{
+			"id": 1,
+			"value": "Cualquiera",
+			"order": 2,
+			"key": "cualquiera",
+			"parent": 17
+		},
+		{
+			"id": 2,
+			"value": "Extranjero",
+			"order": 3,
+			"key": "extranjero",
+			"parent": 17
+		},
+		{
+			"id": 3,
+			"value": "Andalucía",
+			"order": 4,
+			"key": "andalucia",
+			"parent": 17
+		},
+		{
+			"id": 4,
+			"value": "Aragón",
+			"order": 5,
+			"key": "aragon",
+			"parent": 17
+		},
+		{
+			"id": 5,
+			"value": "Asturias",
+			"order": 6,
+			"key": "asturias",
+			"parent": 17
+		},
+		{
+			"id": 6,
+			"value": "Illes Balears",
+			"order": 7,
+			"key": "illes-balears",
+			"parent": 17
+		},
+		{
+			"id": 7,
+			"value": "Canarias",
+			"order": 8,
+			"key": "canarias",
+			"parent": 17
+		},
+		{
+			"id": 8,
+			"value": "Cantabria",
+			"order": 9,
+			"key": "cantabria",
+			"parent": 17
+		},
+		{
+			"id": 10,
+			"value": "Castilla y León",
+			"order": 10,
+			"key": "castilla-y-leon",
+			"parent": 17
+		},
+		{
+			"id": 9,
+			"value": "Castilla - La Mancha",
+			"order": 11,
+			"key": "castilla-la-mancha",
+			"parent": 17
+		},
+		{
+			"id": 11,
+			"value": "Catalunya",
+			"order": 12,
+			"key": "catalunya",
+			"parent": 17
+		},
+		{
+			"id": 12,
+			"value": "Ceuta",
+			"order": 13,
+			"key": "ceuta",
+			"parent": 17
+		},
+		{
+			"id": 13,
+			"value": "Extremadura",
+			"order": 14,
+			"key": "extremadura",
+			"parent": 17
+		},
+		{
+			"id": 14,
+			"value": "Galicia",
+			"order": 15,
+			"key": "galicia",
+			"parent": 17
+		},
+		{
+			"id": 16,
+			"value": "Madrid",
+			"order": 16,
+			"key": "madrid",
+			"parent": 17
+		},
+		{
+			"id": 21,
+			"value": "Melilla",
+			"order": 17,
+			"key": "melilla",
+			"parent": 17
+		},
+		{
+			"id": 17,
+			"value": "Murcia",
+			"order": 18,
+			"key": "murcia",
+			"parent": 17
+		},
+		{
+			"id": 18,
+			"value": "Navarra",
+			"order": 19,
+			"key": "navarra",
+			"parent": 17
+		},
+		{
+			"id": 19,
+			"value": "País Vasco / Euskadi",
+			"order": 20,
+			"key": "pais-vasco-euskadi",
+			"parent": 17
+		},
+		{
+			"id": 15,
+			"value": "La Rioja",
+			"order": 21,
+			"key": "la-rioja",
+			"parent": 17
+		},
+		{
+			"id": 20,
+			"value": "Comunidad Valenciana",
+			"order": 22,
+			"key": "comunidad-valenciana",
+			"parent": 17
+		}
+	]
+}

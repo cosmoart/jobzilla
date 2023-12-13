@@ -1,12 +1,6 @@
 {
 	"category": [
 		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-"
-		},
-		{
 			"id": 20,
 			"value": "Administración Pública",
 			"order": 1,
@@ -134,139 +128,6 @@
 		}
 	],
 	"subcategory": [
-		{
-			"id": -3118,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 170
-		},
-		{
-			"id": -3115,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 160
-		},
-		{
-			"id": -3105,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 150
-		},
-		{
-			"id": -3098,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 140
-		},
-		{
-			"id": -3094,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 130
-		},
-		{
-			"id": -3077,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 120
-		},
-		{
-			"id": -3068,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 110
-		},
-		{
-			"id": -3063,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 100
-		},
-		{
-			"id": -3056,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 90
-		},
-		{
-			"id": -3044,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 80
-		},
-		{
-			"id": -3039,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 70
-		},
-		{
-			"id": -3033,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 60
-		},
-		{
-			"id": -3027,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 50
-		},
-		{
-			"id": -3024,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 40
-		},
-		{
-			"id": -3020,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 190
-		},
-		{
-			"id": -3017,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 30
-		},
-		{
-			"id": -3011,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 20
-		},
-		{
-			"id": -3000,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 10
-		},
-		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "-",
-			"parent": 0
-		},
 		{
 			"id": 3134,
 			"value": "Acceso al mercado y relaciones institucionales",
@@ -1236,12 +1097,6 @@
 	],
 	"teleworking": [
 		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "indicar"
-		},
-		{
 			"id": 1,
 			"value": "Presencial",
 			"order": 1,
@@ -1267,12 +1122,6 @@
 		}
 	],
 	"contractType": [
-		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "seleccionar"
-		},
 		{
 			"id": 10,
 			"value": "Autónomo",
@@ -1323,12 +1172,6 @@
 		}
 	],
 	"workday": [
-		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 1,
-			"key": "seleccionar"
-		},
 		{
 			"id": 1,
 			"value": "Completa",
@@ -1392,12 +1235,6 @@
 	],
 	"salaryPeriod": [
 		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 0,
-			"key": "seleccionar"
-		},
-		{
 			"id": 3,
 			"value": "Bruto/año",
 			"order": 10,
@@ -1417,12 +1254,6 @@
 		}
 	],
 	"study": [
-		{
-			"id": 0,
-			"value": "(Indicar Nivel)",
-			"order": 0,
-			"key": "indicar-nivel"
-		},
 		{
 			"id": 10,
 			"value": "Sin estudios",
@@ -1539,12 +1370,6 @@
 		}
 	],
 	"experienceMin": [
-		{
-			"id": 0,
-			"value": "(Seleccionar)",
-			"order": 1,
-			"key": "seleccionar"
-		},
 		{
 			"id": 1,
 			"value": "No Requerida",

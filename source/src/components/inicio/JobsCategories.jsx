@@ -9,6 +9,7 @@ import arrowIcon from '@/assets/icons/arrow.svg'
 export default function JobsCategories () {
 	useEffect(() => {
 		const scrollX = document.querySelector('#scrollX')
+		scrollX.scrollLeft = scrollX.scrollWidth / 2 - scrollX.clientWidth / 2
 		function scrollController (e) {
 			e.preventDefault()
 			scrollX.scrollLeft += e.deltaY * 2
@@ -26,7 +27,7 @@ export default function JobsCategories () {
 				</button>
 				<div className='flex gap-4 overflow-auto relative px-8 py-2' id='scrollX'>
 					{categories.map((category, index) => (
-						<Link href={`/buscador-empleos?category=${category.key}`} key={index} className='flex border-[--mainColor] hover:text-white items-center border-4 min-w-max justify-center rounded-md py-4 px-6 skew-x-12 relative after:bg-[--mainColor] after:absolute after:h-full after:w-0 hover:after:w-full after:-z-10 after:transition-all after:left-0'
+						<Link href={`/buscador-empleos?category=${category.key}`} key={index} className='flex   items-center border-4 min-w-max justify-center rounded-lg border-blue-500 hover:bg-transparent hover:text-blue-500 py-4 px-6 skew-x-12 relative text-white bg-blue-500'
 							style={{ '--mainColor': category.color ?? 'rgb(59 130 246)' }}>
 							<span className='font-bold -skew-x-12'>{category.value}</span>
 						</Link>

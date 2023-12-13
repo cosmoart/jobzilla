@@ -1,44 +1,55 @@
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import formFilters from '@/assets/json/formFilters.json'
-import formCountryFilter from '@/assets/json/formCountryFilter.json'
-import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import formCityFilter from '@/assets/json/formCityFilter.json'
+import formRegionFilter from '@/assets/json/formRegionFilter.json'
+import { useState } from 'react'
 
-export default function Form ({ setParams }) {
-	const validQueries = ['q', 'province', 'category', 'subcategory', 'city', 'country', 'salaryMin', 'salaryPeriod', 'study', 'contractType', 'experienceMin', 'workday', 'order', 'page', 'sinceDate', 'teleworking']
+export default function Form ({ setParams, actualParams }) {
+	// formFilters.subcategory.filter(item => {
+	// 	console.log(+item.parent, +actualParams.categoryID)
+	// 	return +item.parent === +actualParams.categoryID
+	// })
+	console.log(formFilters.subcategory.filter(item => +item.parent === +actualParams.categoryID))
+	const [salaryMin, setsalaryMin] = useState(7000)
+	const searchParams = useSearchParams()
+	const pathName = usePathname()
+	const { replace } = useRouter()
+	let debounceTimer
 
 	const salaryRanges = {
 		'bruto-ano': { min: 7000, max: 70000, step: 1000 },
 		'bruto-mes': { min: 450, max: 7000, step: 50 },
-		'bruto-hora': { min: 12, max: 100, step: 1 }
+		'bruto-hora': { min: 5, max: 100, step: 1 }
 	}
-
-	const [filters, setFilters] = useState({
-		salaryPeriod: 'bruto-ano',
-		salaryMin: 7000
-	})
-	const searchP = useSearchParams()
-
-	useEffect(() => {
-		const searchParams = Object.fromEntries(searchP)
-		const filtered = Object.keys(searchParams)
-			.filter(key => validQueries.includes(key))
-			.reduce((obj, key) => {
-				obj[key] = searchParams[key]
-				return obj
-			}, {})
-		setFilters(filters => ({ ...filters, ...filtered }))
-	}, [])
 
 	function handleSubmit (e) {
 		e.preventDefault()
-		setParams(filters)
+		// setParams(filters)
 	}
 
-	function handlePeriod (e) {
-		if (e.target.value === 'bruto-ano') setFilters({ ...filters, salaryMin: 7000 })
-		else if (e.target.value === 'bruto-mes') setFilters({ ...filters, salaryMin: 450 })
-		else if (e.target.value === 'bruto-hora') setFilters({ ...filters, salaryMin: 12 })
-		setFilters(filters => ({ ...filters, salaryPeriod: e.target.value }))
+	function handleSalaryRange (e) {
+		setsalaryMin(e.target.value)
+		handleInputChangue('salaryMin', e.target.value)
+	}
+
+	function handlePeriod (period, salary) {
+		const params = new URLSearchParams(searchParams)
+		setsalaryMin(salary)
+		params.set('salaryMin', salary)
+		params.set('salaryPeriod', period)
+		replace(`${pathName}?${params.toString()}`, { shallow: true })
+	}
+
+	function handleInputChangue (type, value, id) {
+		clearTimeout(debounceTimer)
+		debounceTimer = setTimeout(() => {
+			const params = new URLSearchParams(searchParams)
+			if (id) params.set(`${type}ID`, id)
+			if (value.trim()) params.set(type, value.trim())
+			else params.delete(type)
+			replace(`${pathName}?${params.toString()}`, { shallow: true })
+		}, 500)
 	}
 
 	return (
@@ -47,91 +58,145 @@ export default function Form ({ setParams }) {
 			onSubmit={handleSubmit}>
 			<fieldset className='flex gap-3 flex-col md:flex-row'>
 				<legend className='hidden'>Busca por palabras clave y lugar</legend>
-				<input type='text' placeholder='Desarrollador, mesero, diseñador...' name='job' defaultValue={filters.q ?? ''} className='py-2 bg-slate-100 dark:bg-slate-600 px-4 w-full rounded-md shrink-[0.4]' onChange={e => setFilters({ ...filters, q: e.target.value })} />
+				<input type='text' placeholder='Desarrollador, mesero, diseñador...' name='job'
+					defaultValue={actualParams.query ?? ''} className='py-2 bg-slate-100 dark:bg-slate-600 ring-1 ring-slate-200 px-4 w-full rounded-md shrink-[0.4]'
+					onChange={(e) => handleInputChangue('query', e.target.value)} />
 
-				<select name='country' defaultValue={filters.country ?? 'espana'} id='country' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, country: e.target.value })}>
-					<option value='_' disabled>País</option>
-					{
-						formCountryFilter.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='region'
+					onValueChange={(value) => handleInputChangue('region', value.split(' ')[0], value.split(' ')[1])}
+					defaultValue={actualParams.region ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]' >
+						<SelectValue placeholder='Region' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formRegionFilter.region.map((item, index) => (
+								<SelectItem key={index} value={`${item.key} ${item.id}`} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 
-				<button className='bg-blue-500 hover:bg-blue-600 text-white rounded-md py-2 px-6'>Buscar</button>
+				<Select name='city'
+					onValueChange={(value) => handleInputChangue('city', value)}
+					defaultValue={actualParams.city ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]' >
+						<SelectValue placeholder='Ciudad' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							actualParams.regionID
+								? formCityFilter.filter(item => +item.parent === +actualParams.regionID).map((item, index) => (
+									<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+								))
+								: <SelectItem value='none' disabled>Elija una región</SelectItem>
+						}
+					</SelectContent>
+				</Select>
+
+				<button className='bg-blue-500 hover:bg-blue-600 text-white rounded-md py-2 px-5 w-full'>Buscar</button>
 			</fieldset>
 
 			<fieldset className='flex gap-3 flex-col md:flex-row'>
+				<Select name='category'
+					onValueChange={(value) => handleInputChangue('category', value.split(' ')[0], value.split(' ')[1])}
+					defaultValue={actualParams.category ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Categoría' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.category.map((item, index) => (
+								<SelectItem key={index} value={`${item.key} ${item.id}`} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 
-				<select name='category' defaultValue={filters.category ?? '_'} id='category' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, category: e.target.value })}>
-					<option value='_' disabled>Categoría</option>
-					{
-						formFilters.category.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='subcategory'
+					onValueChange={(value) => handleInputChangue('subcategory', value)}
+					defaultValue={actualParams.subcategory ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Subcategoría' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							actualParams.categoryID
+								? formFilters.subcategory.filter(item => +item.parent === +actualParams.categoryID)
+									.map((item, index) => (
+										<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+									))
+								: <SelectItem value='none' disabled>Elija una categoría</SelectItem>
+						}
+					</SelectContent>
+				</Select>
 
-				<select name='subcategory' defaultValue={filters.subcategory ?? '_'} id='subcategory' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, subcategory: e.target.value })}>
-					<option value='_' disabled >Subcategoría</option>
-					{
-						filters.category
-							? formFilters.subcategory.filter(item => item.parent === filters.categoryID)
-								.map((item, index) => (
-									<option key={index} value={item.key}>{item.value}</option>
-								))
-							: <option value='' disabled>Elija una categoría</option>
-					}
-				</select>
+				<Select name='teleworking'
+					onValueChange={(value) => handleInputChangue('teleworking', value)}
+					defaultValue={actualParams.teleworking ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Teletrabajo' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.teleworking.map((item, index) => (
+								<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 
-				<select name='teleworking' defaultValue={filters.teleworking ?? '_'} id='teleworking' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, teleworking: e.target.value })}>
-					<option value='_' disabled>Teletrabajo</option>
-					{
-						formFilters.teleworking.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='contractType'
+					onValueChange={(value) => handleInputChangue('contractType', value)}
+					defaultValue={actualParams.contractType ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Tipo de contrato' className='text-stone-950 ' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.contractType.map((item, index) => (
+								<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 
-				<select name='contractType' defaultValue={filters.contractType ?? '_'} id='contractType' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, contractType: e.target.value })}>
-					<option value='_' disabled>Tipo de contrato</option>
-					{
-						formFilters.contractType.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
-
-				<select name='workday' defaultValue='_' id='workday' className='w-full p-1 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, workday: e.target.value })}>
-					<option value='_' disabled>Jornada laboral</option>
-					{
-						formFilters.workday.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='workday'
+					onValueChange={(value) => handleInputChangue('workday', value)}
+					defaultValue={actualParams.workday ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Jornada laboral' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.workday.map((item, index) => (
+								<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 			</fieldset>
 
 			<fieldset className='flex gap-3 flex-col md:flex-row items-center'>
 				<div className='flex gap-2 flex-grow w-full text-center shrink-[0.6] items-center'>
 					<input type='range' name='salaryMin'
-						defaultValue={filters.salaryMin ?? 0}
-						min={salaryRanges[filters.salaryPeriod].min}
-						max={salaryRanges[filters.salaryPeriod].max}
-						step={salaryRanges[filters.salaryPeriod].step}
+						defaultValue={actualParams.salaryMin ?? 7000}
+						min={salaryRanges[actualParams.salaryPeriod ?? 'bruto-ano'].min}
+						max={salaryRanges[actualParams.salaryPeriod ?? 'bruto-ano'].max}
+						step={salaryRanges[actualParams.salaryPeriod ?? 'bruto-ano'].step}
 						className='w-full'
-						onChange={e => setFilters({ ...filters, salaryMin: e.target.value })} />
+						onChange={handleSalaryRange} />
 
-					<span className='text-slate-500 dark:text-white mx-2'>{Number(filters.salaryMin).toLocaleString('en-US')}€</span>
+					<span className='text-slate-500 dark:text-white mx-2 w-16 block'>{Number(salaryMin).toLocaleString('en-US')}€</span>
 
-					<div className='flex'>
-						<button type='button' className={`${filters.salaryPeriod === 'bruto-hora' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-l-md py-2 px-3`} value='bruto-hora' onClick={handlePeriod}>
+					<div className='flex ring-1 rounded-md ring-slate-200'>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-hora' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-l-md py-2 px-3`} value='bruto-hora' onClick={() => handlePeriod('bruto-hora', 12)}>
 							Hora
 						</button>
-						<button type='button' className={`${filters.salaryPeriod === 'bruto-mes' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 py-2 px-3`} value='bruto-mes' onClick={handlePeriod}>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-mes' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 py-2 px-3`} value='bruto-mes' onClick={() => handlePeriod('bruto-mes', 450)}>
 							Mes
 						</button>
-						<button type='button' className={`${filters.salaryPeriod === 'bruto-ano' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-r-md py-2 px-3`} value='bruto-ano' onClick={handlePeriod}>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-ano' || !actualParams.salaryPeriod ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-r-md py-2 px-3`} value='bruto-ano' onClick={() => handlePeriod('bruto-ano', 7000)}>
 							Año
 						</button>
 					</div>
@@ -139,24 +204,38 @@ export default function Form ({ setParams }) {
 
 				<span className='h-8 rounded w-[1px] bg-slate-400 inline-block mx-2' />
 
-				<select name='study' defaultValue='_' id='study' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, study: e.target.value })}>
-					<option value='_' disabled>Estudios</option>
-					{
-						formFilters.study.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='study'
+					onValueChange={(value) => handleInputChangue('study', value)}
+					defaultValue={actualParams.study ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Estudios' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.study.map((item, index) => (
+								<SelectItem key={index} value={item.key} className='text-[15px]'>
+									{item.value}
+								</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 
-				<select name='sinceDate' defaultValue='_' id='sinceDate' className='w-full py-2 px-3 bg-slate-100 dark:bg-slate-600 rounded-md' onChange={e => setFilters({ ...filters, sinceDate: e.target.value })}>
-					<option value='_' disabled>Fecha</option>
-					{
-						formFilters.sinceDate.map((item, index) => (
-							<option key={index} value={item.key}>{item.value}</option>
-						))
-					}
-				</select>
+				<Select name='sinceDate'
+					onValueChange={(value) => handleInputChangue('sinceDate', value)}
+					defaultValue={actualParams.sinceDate ?? ''} >
+					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+						<SelectValue placeholder='Fecha' className='text-stone-950' />
+					</SelectTrigger>
+					<SelectContent>
+						{
+							formFilters.sinceDate.map((item, index) => (
+								<SelectItem key={index} value={item.key} className='text-[15px]'>{item.value}</SelectItem>
+							))
+						}
+					</SelectContent>
+				</Select>
 			</fieldset>
-		</form>
+		</form >
 	)
 }

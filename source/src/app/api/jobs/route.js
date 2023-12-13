@@ -7,7 +7,8 @@ export async function GET (request) {
 	const params = Object.fromEntries(new URLSearchParams(searchParams.toString()))
 
 	if (!id && !params) return NextResponse.json({ error: true, message: 'No id or params provided' }, { status: 400 })
-	const url = id ? `https://api.infojobs.net/api/9/offer/${id}` : 'https://api.infojobs.net/api/9/offer'
+	// const url = id ? `https://api.infojobs.net/api/9/offer/${id}` : 'https://api.infojobs.net/api/9/offer'
+	const url = 'https://api.infojobs.net/api/1/dictionary/city'
 
 	const job = await axios(url, {
 		headers: {

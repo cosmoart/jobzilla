@@ -21,7 +21,7 @@ h4 {
 }
 
 .empresas-main::after {
-	background-image: url('https://images.pexels.com/photos/618079/pexels-photo-618079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-image: url('/empresas-images/image1.webp');
 	background-size: cover;
 	z-index: -2;
 }
@@ -57,12 +57,6 @@ h4 {
 
 html {
 	scroll-behavior: smooth;
-}
-
-.responsiveGrid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	grid-gap: 1rem;
 }
 
 /* ============ HEADER ========== */
@@ -134,16 +128,11 @@ input[type='range']:focus {
 	line-clamp: 4;
 }
 
-/* ============ SELECTION - FOCUS ========= */
+/* ============ SELECTION ========= */
 
 ::selection {
 	background: rgb(37 99 235);
 	color: white;
-}
-:focus-visible:not(input, select) {
-	border-radius: 3px;
-	outline: 4px dashed rgb(99 102 241);
-	outline-offset: 4px;
 }
 
 /* ============ SCROLL-BAR ========= */
@@ -157,7 +146,7 @@ input[type='range']:focus {
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	border: 3px solid white;
+	border: 2px solid white;
 	background: rgb(79, 90, 109);
 	transition: background 0.1s ease-out;
 }
@@ -185,4 +174,12 @@ input[type='range']:focus {
 #scrollX::-webkit-scrollbar {
 	height: 10px;
 	opacity: 0.5;
+	background: rgba(71, 85, 105, 0.144);
+}
+#scrollX::-webkit-scrollbar-thumb {
+	background: rgb(59 130 246);
+	border: 2px solid rgb(204, 210, 218);
+}
+#scrollX::-webkit-scrollbar-track {
+	background: rgb(204, 210, 218);
 }

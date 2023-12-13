@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 export default function Gallery ({ media }) {
 	useEffect(() => {
-		mediumZoom('[data-zoomable]')
+		mediumZoom('[data-zoomable]', { background: '#ffffff9c' })
 	}, [])
 
 	return (
