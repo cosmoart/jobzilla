@@ -27,10 +27,10 @@ export default function Empresa () {
 			<Separator />
 
 			<Tabs defaultValue='description' className='w-full mt-3 '>
-				<TabsList className='pb-0 mb-3'>
-					<TabsTrigger value='description' className='text-[17px] rounded-b-none px-7 shadow-none'>Descripción</TabsTrigger>
+				<TabsList className='mb-3'>
+					<TabsTrigger value='description' className='text-[17px] px-6 shadow-none'>Descripción</TabsTrigger>
 					{companyInfo.media && companyInfo.media.length > 0 &&
-						<TabsTrigger value='gallery' className='text-[17px] rounded-b-none px-5 shadow-none'>Galería</TabsTrigger>}
+						<TabsTrigger value='gallery' className='text-[17px] px-6 shadow-none'>Galería</TabsTrigger>}
 				</TabsList>
 				<TabsContent value='description'>
 					<div className='mb-20 whitespace-pre-line' dangerouslySetInnerHTML={{ __html: companyInfo.description }} />

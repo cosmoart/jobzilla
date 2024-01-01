@@ -68,10 +68,10 @@ export default function Filters () {
 				</div>
 				<div className='flex justify-between gap-4 flex-wrap'>
 					{cities.map(city => (
-						<article key={city.name} className='rounded-lg shadow-md bg-slate-200 relative flex-grow transition-transform hover:scale-[1.01]'>
+						<article key={city.name} className='rounded-lg shadow-md bg-gray-200 relative flex-grow transition-transform hover:scale-[1.01]'>
 							<Link href={city.link} className='flex h-full flex-col'>
 								<Image src={city.img} alt={city.name} className='object-cover flex-grow rounded-md w-full max-h-96' width={200} height={400} loading='lazy' />
-								<h3 className='text-xl absolute bottom-0 left-0 px-5 py-1 rounded-tr-lg font-semibold mt-3 bg-white text-slate-900'>{city.name}</h3>
+								<h3 className='text-xl absolute bottom-0 left-0 px-5 py-1 rounded-tr-lg font-semibold mt-3 bg-white text-gray-900'>{city.name}</h3>
 							</Link>
 						</article>
 					))}
@@ -85,10 +85,10 @@ export default function Filters () {
 				</div>
 				<div className='flex justify-between gap-4 flex-wrap'>
 					{filters.map(filter => (
-						<article key={filter.name} className='rounded-lg shadow-md bg-slate-200 relative flex-grow transition-transform hover:scale-[1.01]'>
+						<article key={filter.name} className='rounded-lg shadow-md bg-gray-200 relative flex-grow transition-transform hover:scale-[1.01]'>
 							<Link href={filter.link} className='flex h-full flex-col'>
 								<Image src={filter.img} alt={filter.name} className='object-cover flex-grow rounded-md w-full max-h-96' width={200} height={400} loading='lazy' />
-								<h3 className='text-xl absolute bottom-0 left-0 px-5 py-1 rounded-tr-lg font-semibold mt-3 bg-white text-slate-900'>{filter.name}</h3>
+								<h3 className='text-xl absolute bottom-0 left-0 px-5 py-1 rounded-tr-lg font-semibold mt-3 bg-white text-gray-900'>{filter.name}</h3>
 							</Link>
 						</article>
 					))}

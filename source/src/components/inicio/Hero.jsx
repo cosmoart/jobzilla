@@ -23,7 +23,7 @@ export default function Hero () {
 				<form className='flex flex-col sm:flex-row gap-2 items-center' onSubmit={handleSubmit}>
 					<label className='w-full shrink-[0.6] text-base'>
 						<span className='text-white'>Busco ofertas de...</span>
-						<input type='text' placeholder='Desarrollador, diseñador, mesero...' name='q' className='border px-4 border-slate-300 rounded-md p-2 w-full shrink-[0.6]' />
+						<input type='text' placeholder='Desarrollador, diseñador, mesero...' name='q' className='border px-4 border-gray-300 rounded-md p-2 w-full shrink-[0.6]' />
 					</label>
 
 					<label className='w-[570px]'>

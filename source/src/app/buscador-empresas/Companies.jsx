@@ -14,7 +14,7 @@ export default function Companies ({ companies, loading, error }) {
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto  mt-12 mb-20'>
 			{
 				companies.map((company, i) => (
-					<Link key={i} href={`/empresa?sdrn=${company.sdrn}`} className='bg-slate-200 p-5 rounded-md overflow-hidden hover:scale-[1.02] transition-all'>
+					<Link key={i} href={`/empresa?sdrn=${company.sdrn}`} className='bg-gray-200 dark:bg-gray-800 p-5 rounded-md overflow-hidden hover:scale-[1.02] transition-all'>
 						<section className='h-full'>
 							<div className='flex gap-4 items-center h-full'>
 								<Image className='rounded-md'

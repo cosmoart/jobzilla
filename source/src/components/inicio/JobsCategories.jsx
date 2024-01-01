@@ -22,7 +22,7 @@ export default function JobsCategories () {
 		<section className='my-20'>
 			<h2 className='text-2xl text-center font-semibold my-4'>Categorías</h2>
 			<div className='relative'>
-				<button className='absolute z-10 top-1/2 -translate-y-1/2 left-0 rotate-180 bg-gradient-to-r from-transparent to-white dark:to-slate-700 h-full p-2 ' onClick={() => { document.querySelector('#scrollX').scrollLeft -= 100 }}>
+				<button className='absolute z-10 top-1/2 -trangray-y-1/2 left-0 rotate-180 bg-gradient-to-r from-transparent to-white dark:to-gray-700 h-full p-2 ' onClick={() => { document.querySelector('#scrollX').scrollLeft -= 100 }}>
 					<Image src={arrowIcon} alt='Left Icon' width={20} height={20} />
 				</button>
 				<div className='flex gap-4 overflow-auto relative px-8 py-2' id='scrollX'>
@@ -33,7 +33,7 @@ export default function JobsCategories () {
 						</Link>
 					))}
 				</div>
-				<button className='absolute z-10 top-1/2 -translate-y-1/2 right-0 bg-gradient-to-r from-transparent to-white dark:to-slate-700 h-full p-2 ' onClick={() => { document.querySelector('#scrollX').scrollLeft += 100 }}>
+				<button className='absolute z-10 top-1/2 -trangray-y-1/2 right-0 bg-gradient-to-r from-transparent to-white dark:to-gray-700 h-full p-2 ' onClick={() => { document.querySelector('#scrollX').scrollLeft += 100 }}>
 					<Image src={arrowIcon} alt='Right Icon' width={20} height={20} />
 				</button>
 			</div>

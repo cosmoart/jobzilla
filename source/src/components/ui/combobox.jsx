@@ -32,7 +32,7 @@ export default function Combobox ({ items, placeholder = 'Seleccione una opción
 					<ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className='w-[250px] p-0 text-base'>
+			<PopoverContent className='w-[250px]  p-0 text-base'>
 				<Command>
 					<CommandInput placeholder={placeholder} />
 					<CommandEmpty>{empy}</CommandEmpty>
@@ -46,7 +46,7 @@ export default function Combobox ({ items, placeholder = 'Seleccione una opción
 									setOpen(false)
 								}}
 								defaultSelected={value === item.value}
-								className={`text-[15px] ${i === 1 ? 'border-b-[1px] border-slate-300 pb-3' : ''} ${i === 2 ? 'pt-3' : ''}`}
+								className={`text-[15px] ${i === 1 ? 'border-b-[1px] border-gray-300 pb-3' : ''} ${i === 2 ? 'pt-3' : ''}`}
 							>
 								<Check
 									className={cn(

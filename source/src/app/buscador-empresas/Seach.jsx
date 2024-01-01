@@ -17,7 +17,7 @@ export default function Search () {
 	}
 
 	return (
-		<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full  sm:w-auto py-2 px-4   flex-grow focus:ring-blue-600 focus:border-transparent z-10' required onChange={handleInputChangue}
+		<input type='text' placeholder='Infojobs, Adevinta, Adidas... ' name='search' className='w-full  sm:w-auto py-2 px-4 dark:text-white  flex-grow dark:bg-gray-800 focus:ring-blue-600 focus:border-transparent z-10' required onChange={handleInputChangue}
 			defaultValue={searchParams.get('query')}
 		/>
 	)

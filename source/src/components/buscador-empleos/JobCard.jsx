@@ -6,9 +6,9 @@ export default function JobCard ({ job }) {
 	const { shortTimeAgo, longTimeAgo, newTime } = useTimeAgo(new Date(job.published))
 
 	return (
-		<li key={job.id} className='p-4 rounded-md border dark:border-slate-500 hover:bg-blue-100 dark:hover:bg-slate-600 transition-colors overflow-hidden h-max min-h-full'>
+		<li key={job.id} className='p-4 rounded-md border dark:border-gray-500 hover:bg-blue-100 dark:hover:bg-gray-600 transition-colors overflow-hidden h-max min-h-full'>
 			<Link rel='prefetch' href={`/oferta/${job.id}`} className='flex gap-5 items-center'>
-				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-slate-200' />
+				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-gray-200' />
 				<div>
 					<div className='flex gap-3 items-center'>
 						<h2 className='text-xl font-bold'>{job.title}</h2>
@@ -20,7 +20,7 @@ export default function JobCard ({ job }) {
 							job.salaryMin.value && (
 								<>
 									<strong className='text-sm font-semibold text-green-600'>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</strong>
-									<span className='h-3 rounded w-[1px] bg-slate-800 inline-block' />
+									<span className='h-3 rounded w-[1px] bg-gray-800 inline-block' />
 								</>
 							)
 						}
@@ -28,11 +28,7 @@ export default function JobCard ({ job }) {
 							job.teleworking && <span className='text-sm'>{job.teleworking.value}</span>
 						}
 					</div>
-					{/* <span>{job.category.value} - {job.subcategory.value}</span>
-					<span>{job.contractType.value}</span>
-					<span>{job.experienceMin.value}</span>
-					<span>{job.workDay.value}</span>
-					<span>{job.study.value}</span> */}
+
 					<p className='jobShortDescription my-2' title={job.requirementMin}>{job.requirementMin}</p>
 				</div>
 			</Link>

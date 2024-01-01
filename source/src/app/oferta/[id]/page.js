@@ -2,6 +2,8 @@ import Error from '@/components/ErrorMessage'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
+
 const JobMap = dynamic(() => import('@/components/JobMap'), { ssr: false })
 
 const fetchJob = async (id) => {
@@ -13,47 +15,87 @@ const fetchJob = async (id) => {
 		.catch(() => { return { error: true } })
 }
 
-export default async function Job ({ params }) {
+export default async function Job ({ params, className }) {
 	const { id } = params
 	const job = await fetchJob(id)
 
-	if (job.error) {
-		return <Error />
-	}
-
+	if (job.error) return <Error className='mt-20' />
 	return (
-		<main className='flex max-w-7xl mx-auto'>
-			<div className='max-w-7xl px-4'>
-				<div className='headerGrid'>
+		<main className={`flex flex-col md:flex-row max-w-7xl mx-auto ${className}`}>
+			<div className='px-4 md:max-w-[80%]'>
+				<div className='mb-6'>
 					{
 						job.profile?.headerImageUrl && (
-							<div className='w-full relative h-48 headerHeroIMG'>
-								<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover' />
+							<div className='w-full relative h-48'>
+								<Image src={job.profile?.headerImageUrl} alt='' fill={true} className='object-cover rounded-b-md' />
 							</div>
 						)
 					}
-					<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className='headerLogo w-full rounded-md ring-2 ring-slate-200 aspect-square z-10' />
-					<div className='flex items-center justify-between headerDescription p-3'>
-						<div className='flex flex-col'>
-							<strong className='font-semibold'>{job.profile.name}</strong>
-							<h1 className='text-xl font-bold my-1'>{job.title}</h1>
-						</div>
-						<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block ml-4 hover:bg-blue-600 text-center text-white'>Aplicar</a>
 
+					<div className='flex'>
+						<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className={`rounded-md ring-2 ring-gray-200 aspect-square z-10 size-28 ${job.profile?.headerImageUrl ? '-mt-10' : ''} relative`} />
+						<div className='flex items-center justify-between p-3 w-full'>
+							<div className='flex flex-col'>
+								<h1 className='text-xl font-bold '>{job.title}</h1>
+								<strong className='font-semibold text-[15px]'>
+									{
+										job.profile.web
+											? <a href={job.profile.web} target='_blank' rel='noopener noreferrer' >{job.profile.name}</a>
+											: job.profile.name
+									}
+									- {job.city}
+								</strong>
+
+							</div>
+							<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block ml-4 hover:bg-blue-600 text-center transition-colors text-white'>Aplicar</a>
+
+						</div>
 					</div>
 				</div>
-				<div className='flex-grow basis-0'>
-					<span>
-						Experiencia minima: {job.experienceMin.value}
-					</span>
-					<span>
-						Categoria: {job.subcategory.value} - {job.category.value}
-					</span>
-					<p className='font-bold'>{job.city}, {job.province.value}, {job.country.value}</p>
-					<div className='mb-24 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.profile.description }} />
+
+				<Table>
+					<TableBody className='text-[15px]'>
+						<TableRow>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Aplicaciones:</span> {job.applications}</TableCell>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Experiencia minima:</span> {job.experienceMin?.value}</TableCell>
+							<TableCell className='py-2'><span className='font-semibold'>Categoria:</span> {job.subcategory?.value} - {job.category?.value}</TableCell>
+						</TableRow>
+						<TableRow>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Estudios minimos:</span> {job.studiesMin?.value}</TableCell>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>País:</span> {job.country?.value}</TableCell>
+							<TableCell className='py-2'><span className='font-semibold'>Tipo:</span> {job.teleworking?.value}</TableCell>
+						</TableRow>
+						<TableRow>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Salario:</span> {job.salaryDescription}</TableCell>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Contrato:</span> {job.contractType?.value}</TableCell>
+							<TableCell className='py-2'><span className='font-semibold'>Vacantes:</span> {job.vacancies}</TableCell>
+						</TableRow>
+						<TableRow>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Fecha de publicación:</span> {new Date(job.creationDate).toLocaleDateString()}</TableCell>
+							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Nivel:</span> {job.jobLevel?.value}</TableCell>
+							<TableCell className='py-2'><span className='font-semibold'>Duración del contrato:</span> {job.contractDuration}</TableCell>
+						</TableRow>
+					</TableBody>
+				</Table>
+
+				<div className='flex-grow basis-0 mt-10'>
+					{job.description && (
+						<section>
+							<h2 className='mb-2 font-semibold text-xl'>Descripción</h2>
+							<div className='mb-12 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.description }} />
+						</section>
+					)}
+
+					{
+						job.minRequirements && (<section>
+							<h2 className='mb-2 font-semibold text-xl'>Requisitos</h2>
+							<div className='mb-12 max-w-4xl whitespace-pre-line' dangerouslySetInnerHTML={{ __html: job.minRequirements }} />
+						</section>)
+					}
 				</div>
 			</div>
-			<div className='flex-grow basis-0 flex h-[90vh]'>
+
+			<div className='flex-grow mb-20 md:mb-0 md:basis-0 flex md:h-[90vh] w-full h-96 md:sticky top-16'>
 				<JobMap job={job} />
 			</div>
 		</main>

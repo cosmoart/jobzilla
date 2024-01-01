@@ -16,7 +16,7 @@ export default function Gallery ({ media }) {
 					</div>
 				))
 			}
-			<div className='grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-4'>
+			<div className='md:grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-4'>
 				{
 					media.filter(media => media.type === 'IMAGE').map((media, i) => (
 						<div key={i} className='relative mb-4'>

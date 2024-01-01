@@ -45,7 +45,7 @@ export default function RootLayout ({ children }) {
 				<link rel='stylesheet' href='https://unpkg.com/leaflet/dist/leaflet.css' />
 				<link rel='stylesheet' href='https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css' />
 			</head>
-			<body className={`${inter.className} dark:bg-slate-700 text-slate-950 dark:text-white min-h-screen flex flex-col`}>
+			<body className={`${inter.className} dark:bg-gray-700 text-gray-950 dark:text-white min-h-screen flex flex-col`}>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'

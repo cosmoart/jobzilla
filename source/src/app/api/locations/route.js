@@ -20,7 +20,8 @@ export async function GET (request) {
 			.then(res => {
 				return {
 					lon: res.data.features[0].center[0],
-					lat: res.data.features[0].center[1]
+					lat: res.data.features[0].center[1],
+					name
 				}
 			})
 			.catch(() => {

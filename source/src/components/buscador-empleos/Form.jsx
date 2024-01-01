@@ -6,11 +6,6 @@ import formRegionFilter from '@/assets/json/formRegionFilter.json'
 import { useState } from 'react'
 
 export default function Form ({ setParams, actualParams }) {
-	// formFilters.subcategory.filter(item => {
-	// 	console.log(+item.parent, +actualParams.categoryID)
-	// 	return +item.parent === +actualParams.categoryID
-	// })
-	console.log(formFilters.subcategory.filter(item => +item.parent === +actualParams.categoryID))
 	const [salaryMin, setsalaryMin] = useState(7000)
 	const searchParams = useSearchParams()
 	const pathName = usePathname()
@@ -54,18 +49,18 @@ export default function Form ({ setParams, actualParams }) {
 
 	return (
 		<form
-			className='grid gap-3 px-6 md:px-0 mx-auto max-w-7xl'
+			className='grid gap-3 mx-auto max-w-7xl'
 			onSubmit={handleSubmit}>
 			<fieldset className='flex gap-3 flex-col md:flex-row'>
 				<legend className='hidden'>Busca por palabras clave y lugar</legend>
 				<input type='text' placeholder='Desarrollador, mesero, diseñador...' name='job'
-					defaultValue={actualParams.query ?? ''} className='py-2 bg-slate-100 dark:bg-slate-600 ring-1 ring-slate-200 px-4 w-full rounded-md shrink-[0.4]'
+					defaultValue={actualParams.query ?? ''} className='py-2 bg-gray-100 dark:bg-gray-600 ring-1 ring-gray-200 px-4 w-full rounded-md shrink-[0.4]'
 					onChange={(e) => handleInputChangue('query', e.target.value)} />
 
 				<Select name='region'
 					onValueChange={(value) => handleInputChangue('region', value.split(' ')[0], value.split(' ')[1])}
 					defaultValue={actualParams.region ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]' >
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]' >
 						<SelectValue placeholder='Region' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -80,7 +75,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='city'
 					onValueChange={(value) => handleInputChangue('city', value)}
 					defaultValue={actualParams.city ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]' >
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]' >
 						<SelectValue placeholder='Ciudad' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -101,7 +96,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='category'
 					onValueChange={(value) => handleInputChangue('category', value.split(' ')[0], value.split(' ')[1])}
 					defaultValue={actualParams.category ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Categoría' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -116,7 +111,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='subcategory'
 					onValueChange={(value) => handleInputChangue('subcategory', value)}
 					defaultValue={actualParams.subcategory ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Subcategoría' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -134,7 +129,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='teleworking'
 					onValueChange={(value) => handleInputChangue('teleworking', value)}
 					defaultValue={actualParams.teleworking ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Teletrabajo' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -149,7 +144,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='contractType'
 					onValueChange={(value) => handleInputChangue('contractType', value)}
 					defaultValue={actualParams.contractType ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Tipo de contrato' className='text-stone-950 ' />
 					</SelectTrigger>
 					<SelectContent>
@@ -164,7 +159,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='workday'
 					onValueChange={(value) => handleInputChangue('workday', value)}
 					defaultValue={actualParams.workday ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Jornada laboral' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -187,27 +182,27 @@ export default function Form ({ setParams, actualParams }) {
 						className='w-full'
 						onChange={handleSalaryRange} />
 
-					<span className='text-slate-500 dark:text-white mx-2 w-16 block'>{Number(salaryMin).toLocaleString('en-US')}€</span>
+					<span className='text-gray-500 dark:text-white mx-2 w-16 block'>{Number(salaryMin).toLocaleString('en-US')}€</span>
 
-					<div className='flex ring-1 rounded-md ring-slate-200'>
-						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-hora' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-l-md py-2 px-3`} value='bruto-hora' onClick={() => handlePeriod('bruto-hora', 12)}>
+					<div className='flex ring-1 rounded-md ring-gray-200'>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-hora' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-gray-900 hover:bg-gray-200 bg-gray-100 dark:bg-gray-600 dark:text-white'} hover:bg-blue-200 rounded-l-md py-2 px-3`} value='bruto-hora' onClick={() => handlePeriod('bruto-hora', 12)}>
 							Hora
 						</button>
-						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-mes' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 py-2 px-3`} value='bruto-mes' onClick={() => handlePeriod('bruto-mes', 450)}>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-mes' ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-gray-900 hover:bg-gray-200 bg-gray-100 dark:bg-gray-600 dark:text-white'} hover:bg-blue-200 py-2 px-3`} value='bruto-mes' onClick={() => handlePeriod('bruto-mes', 450)}>
 							Mes
 						</button>
-						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-ano' || !actualParams.salaryPeriod ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-slate-900 hover:bg-slate-200 bg-slate-100 dark:bg-slate-600 dark:text-white'} hover:bg-blue-200 rounded-r-md py-2 px-3`} value='bruto-ano' onClick={() => handlePeriod('bruto-ano', 7000)}>
+						<button type='button' className={`${actualParams.salaryPeriod === 'bruto-ano' || !actualParams.salaryPeriod ? 'bg-blue-500 text-white hover:bg-blue-600' : ' text-gray-900 hover:bg-gray-200 bg-gray-100 dark:bg-gray-600 dark:text-white'} hover:bg-blue-200 rounded-r-md py-2 px-3`} value='bruto-ano' onClick={() => handlePeriod('bruto-ano', 7000)}>
 							Año
 						</button>
 					</div>
 				</div>
 
-				<span className='h-8 rounded w-[1px] bg-slate-400 inline-block mx-2' />
+				<span className='md:h-8 w-full h-[1px] rounded md:w-[1px] bg-gray-400 inline-block my-2  md:mx-2' />
 
 				<Select name='study'
 					onValueChange={(value) => handleInputChangue('study', value)}
 					defaultValue={actualParams.study ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Estudios' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
@@ -224,7 +219,7 @@ export default function Form ({ setParams, actualParams }) {
 				<Select name='sinceDate'
 					onValueChange={(value) => handleInputChangue('sinceDate', value)}
 					defaultValue={actualParams.sinceDate ?? ''} >
-					<SelectTrigger className='w-full bg-slate-100 dark:bg-slate-600 text-[15px]'>
+					<SelectTrigger className='w-full bg-gray-100 dark:bg-gray-600 text-[15px]'>
 						<SelectValue placeholder='Fecha' className='text-stone-950' />
 					</SelectTrigger>
 					<SelectContent>
