@@ -63,7 +63,7 @@ export default function Filters () {
 
 			<div>
 				<div className='flex justify-between items-center'>
-					<h2 className='text-2xl font-semibold my-4'>Trabaja cerca de casa</h2>
+					<h2 className='text-xl  md:text-2xl font-semibold my-4'>Trabaja cerca de casa</h2>
 					<Link className='underline text-[17px] hover:opacity-80 transition-colors' href='/buscador-empleos'>+ Ciudades</Link>
 				</div>
 				<div className='flex justify-between gap-4 flex-wrap'>
@@ -80,7 +80,7 @@ export default function Filters () {
 
 			<div className='mt-16'>
 				<div className='flex justify-between items-center'>
-					<h2 className='text-2xl font-semibold my-4'>Encuentra un trabajo de...</h2>
+					<h2 className='text-xl  md:text-2xl font-semibold my-4'>Encuentra un trabajo de...</h2>
 					<Link className='underline text-[17px] hover:opacity-80 transition-colors' href='/buscador-empleos'>+ Filtros</Link>
 				</div>
 				<div className='flex justify-between gap-4 flex-wrap'>

@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/popover'
 import { useState } from 'react'
 
-export default function Combobox ({ items, placeholder = 'Seleccione una opción', empy = 'No se encontraron resultados' }) {
+export default function Combobox ({ items, placeholder = 'Seleccione una opción', empy = 'No se encontraron resultados', className }) {
 	const [open, setOpen] = useState(false)
 	const [value, setValue] = useState('cualquiera')
 
@@ -26,13 +26,13 @@ export default function Combobox ({ items, placeholder = 'Seleccione una opción
 					variant='outline'
 					role='combobox'
 					aria-expanded={open}
-					className='w-[240px] justify-between h-full text-base'
+					className={`w-[240px] justify-between dark:bg-gray-800 h-full text-base ${className}`}
 				>
 					{value ? items.find((item) => item.key.toLowerCase() === value)?.value : placeholder}
 					<ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className='w-[250px]  p-0 text-base'>
+			<PopoverContent className='w-[250px] p-0 text-base'>
 				<Command>
 					<CommandInput placeholder={placeholder} />
 					<CommandEmpty>{empy}</CommandEmpty>

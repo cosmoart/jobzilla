@@ -10,23 +10,23 @@ export default function Header ({ companyInfo }) {
 					<div className='w-full relative h-[300px] -z-10'>
 						{
 							companyInfo.headerImageUrl && (
-								<Image src={companyInfo.headerImageUrl} alt={companyInfo.name} fill={true} className='rounded-b-md object-cover' />
+								<Image src={companyInfo.headerImageUrl} alt={companyInfo.name} fill={true} className='rounded-b-lg object-cover' />
 							)
 						}
 					</div>
 				)
 			}
 
-			<div className={`flex md:gap-4 ${!companyInfo.headerImageUrl ? 'flex-col' : ''} ${!companyInfo.headerImageUrl ? 'mt-16' : ''}`}>
+			<div className={`flex md:gap-4 relative ${!companyInfo.headerImageUrl ? 'flex-col' : ''} ${!companyInfo.headerImageUrl ? 'mt-16' : ''}`}>
 				{
 					companyInfo.corporativeWebUrl
 						? <a href={companyInfo.corporativeWebUrl} target='_blank' rel='noopener noreferrer'>
-							<Image className={`absolute md:static size-24 sm:size-28 -mt-10 ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
+							<Image className={`absolute right-0 left-0 m-auto -top-[4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
 						</a>
-						: <Image className={`absolute md:static size-24 sm:size-28 -mt-10 ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
+						: <Image className={`absolute right-0 left-0 m-auto -top-[4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
 				}
 				<div className='flex flex-col md:ml-5 md:justify-start md:flex-row justify-center w-full gap-4 pb-10 md:pb-0 md:gap-8 items-center py-4 md:px-4'>
-					<div className='flex flex-col mb-3 ml-10 md:ml-0'>
+					<div className='flex flex-col mb-3 text-center md:text-left'>
 						{
 							companyInfo.corporativeWebUrl
 								? <a href={companyInfo.corporativeWebUrl} target='_blank' rel='noopener noreferrer'>
@@ -50,7 +50,7 @@ export default function Header ({ companyInfo }) {
 							</p>
 							-
 							<p className='font-medium inline-block text-[15px] text-black/80 dark:text-white'>
-								{companyInfo.workers.toLocaleString()} empleados
+								{companyInfo.workers?.toLocaleString()} empleados
 							</p>
 						</div>
 						{

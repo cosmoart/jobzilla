@@ -20,7 +20,6 @@ export async function GET (request) {
 		})
 		.catch(() => {
 			return { lon: Math.random() * 2 - 1, lat: Math.random() * 2 - 1 }
-			// throw err
 		})
 
 	return NextResponse.json(coords)

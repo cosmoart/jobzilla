@@ -7,7 +7,7 @@ export default function MapLoadingError ({ loading, error }) {
 	return (
 		<div className='map rounded-sm overflow-hidden relative'>
 			<Image src={mapLoadingIMG} alt='Cargando...' className='blur-[1px] brightness-[.6] h-full object-cover' />
-			<div className='absolute top-1/2 left-1/2 transform -trangray-x-1/2 -trangray-y-1/2'>
+			<div className='absolute m-auto inset-0 flex justify-center items-center'>
 				{
 					loading && (
 						<Image src={loaderIcon} alt='Cargando...' width={50} height={50} />

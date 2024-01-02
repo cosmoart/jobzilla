@@ -1,8 +1,9 @@
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 import Error from '@/components/ErrorMessage'
-import axios from 'axios'
+import { ExternalLink } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
+import axios from 'axios'
 
 const JobMap = dynamic(() => import('@/components/JobMap'), { ssr: false })
 
@@ -32,8 +33,8 @@ export default async function Job ({ params, className }) {
 						)
 					}
 
-					<div className='flex'>
-						<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className={`rounded-md ring-2 ring-gray-200 aspect-square z-10 size-28 ${job.profile?.headerImageUrl ? '-mt-10' : ''} relative`} />
+					<div className='flex flex-col md:flex-row'>
+						<Image src={job.profile?.logoUrl ?? '/company-logo.png'} alt='' width={100} height={100} className={`rounded-md mx-auto ring-2 ring-gray-200 aspect-square z-10 size-28 ${job.profile?.headerImageUrl ? '-mt-10' : ''} relative`} />
 						<div className='flex items-center justify-between p-3 w-full'>
 							<div className='flex flex-col'>
 								<h1 className='text-xl font-bold '>{job.title}</h1>
@@ -47,8 +48,10 @@ export default async function Job ({ params, className }) {
 								</strong>
 
 							</div>
-							<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase block ml-4 hover:bg-blue-600 text-center transition-colors text-white'>Aplicar</a>
-
+							<a href={job.link} target='_blank' rel='noopener noreferrer' className='px-6 py-2 bg-blue-500 rounded uppercase  ml-4 hover:bg-blue-600 text-center transition-colors text-white flex items-center gap-2'>
+								Aplicar
+								<ExternalLink size={18} />
+							</a>
 						</div>
 					</div>
 				</div>

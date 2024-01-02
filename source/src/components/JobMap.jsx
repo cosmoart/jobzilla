@@ -49,9 +49,9 @@ export default function JobMap ({ job }) {
 						</MapContainer>
 				}
 			</div>
-			<strong className={`${showMap ? '' : 'hidden'} absolute bottom-0 z-10 font-semibold text-xs bg-white p-1 rounded-tr-md`}>La ubicación en el mapa es un aproximado.</strong>
-			<button className='bg-gray-100 absolute top-1/2 left-0 z-20 -trangray-y-1/2 rounded-r-md hover:bg-gray-200 py-2 px-[2px]' type='button' onClick={() => setShowMap(!showMap)} title={showMap ? 'Ocultar mapa' : 'Mostrar mapa'}>
-				<Image src={simpleArrowIcon} width={10} height={10} alt='' className={` transition-transform ${showMap ? '' : 'rotate-180'}`} />
+			<strong className={`${showMap ? '' : 'hidden'} absolute bottom-0 z-10 font-semibold text-xs bg-white dark:bg-gray-700 p-1 rounded-tr-md`}>La ubicación en el mapa es un aproximado.</strong>
+			<button className='bg-gray-100 absolute top-1/2 left-0 z-20 -trangray-y-1/2 rounded-r-md hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-800 py-2 px-[2px]' type='button' onClick={() => setShowMap(!showMap)} title={showMap ? 'Ocultar mapa' : 'Mostrar mapa'}>
+				<Image src={simpleArrowIcon} width={10} height={10} alt='' className={`dark:invert transition-transform ${showMap ? '' : 'rotate-180'}`} />
 			</button>
 		</div>
 	)

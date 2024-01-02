@@ -25,7 +25,6 @@ export default function useTimeAgo (timestamp) {
 	const longTimeAgo = rtfLong.format(value, unit)
 	const newTime = unit === 'minute' || unit === 'hour' || unit === 'second'
 
-	// First letter in uppercase
 	return {
 		shortTimeAgo: rtfShort.format(value, unit).charAt(0).toUpperCase() + rtfShort.format(value, unit).slice(1),
 		longTimeAgo: longTimeAgo.charAt(0).toUpperCase() + longTimeAgo.slice(1),

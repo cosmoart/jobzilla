@@ -5,6 +5,7 @@ export default function useFetchData (url, params) {
 	const [data, setData] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false)
+	const test = JSON.stringify(params)
 
 	useEffect(() => {
 		setLoading(true)
@@ -16,7 +17,7 @@ export default function useFetchData (url, params) {
 			})
 			.catch(() => setError(true))
 			.finally(() => setLoading(false))
-	}, [url, params])
+	}, [url, test])
 
 	return [data, loading, error]
 }

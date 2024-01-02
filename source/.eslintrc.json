@@ -9,6 +9,8 @@
 		"no-unused-vars": 1,
 		"useUnknownInCatchVariables": 0,
 		"quotes": [1, "single"],
-		"no-trailing-spaces": 1
+		"no-trailing-spaces": 1,
+		"comma-dangle": [1, "only-multiline"],
+		"semi": [1, "always"]
 	}
 }

@@ -8,7 +8,7 @@ export default function JobCard ({ job }) {
 	return (
 		<li key={job.id} className='p-4 rounded-md border dark:border-gray-500 hover:bg-blue-100 dark:hover:bg-gray-600 transition-colors overflow-hidden h-max min-h-full'>
 			<Link rel='prefetch' href={`/oferta/${job.id}`} className='flex gap-5 items-center'>
-				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='rounded-md aspect-square mb-auto ring-2 ring-gray-200' />
+				<Image src={job.author?.logoUrl ?? '/company-logo.png'} alt={job.name + ' logo'} width={60} height={60} className='hidden md:block rounded-md aspect-square mb-auto ring-2 ring-gray-200' />
 				<div>
 					<div className='flex gap-3 items-center'>
 						<h2 className='text-xl font-bold'>{job.title}</h2>

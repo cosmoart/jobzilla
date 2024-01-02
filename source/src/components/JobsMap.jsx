@@ -40,8 +40,8 @@ export default function JobsMap ({ jobs }) {
 	})
 
 	return (
-		<div className='relative min-w-[1rem]'>
-			<div className={`h-full ${showMap ? '' : 'hidden'}`}>
+		<div className='hidden md:block relative min-w-[1rem] '>
+			<div className={`h-full ${showMap ? 'w-[30vw]' : 'hidden'}`}>
 				{
 					loading || error
 						? <MapLoadingError loading={loading} error={error} />
