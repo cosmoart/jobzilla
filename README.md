@@ -1,7 +1,5 @@
 <div id="top"></div>
 
-![Work in progress](./readme/wip.svg)
-
 <div align="center">
 	<a href="https://jobzilla.vercel.app">
 		<img src="./readme/header.webp" alt="Web preview" />
@@ -12,7 +10,7 @@
 
   # 💼 Jobzilla 👨‍💻
 
-  An app to find your next job. Built with Next.js and Tailwind CSS with the help of the Infojobs API and leaflet.js for the map.
+  An app to find your next job. Built with Next.js and Tailwind CSS with the help of the **Infojobs API** and leaflet.js for the map.
 
   <a href="https://jobzilla.vercel.app">View Demo</a>
   ·
@@ -51,13 +49,57 @@ This is a project for the Infojobs Hackathon 2023. The app is built with Next.js
 <table>
     <tr>
       <td>
-          <img src="./readme/screenshots/mobile.webp" width="100%" title="Mobile solution"  />
+          <img src="./readme/screenshots/home-mobile.webp" width="100%" title="Mobile solution"  />
       </td>
       <td>
-          <img src="./readme/screenshots/tablet.webp" width="100%" title="Tablet solution"/>
+          <img src="./readme/screenshots/home-tablet.webp" width="100%" title="Tablet solution"/>
       </td>
       <td>
-          <img src="./readme/screenshots/desktop.webp" width="100%" title="Desktop solution"/>
+          <img src="./readme/screenshots/home-desktop.webp" width="100%" title="Desktop solution"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <img src="./readme/screenshots/empresas-mobile.webp" width="100%" title="Mobile solution"  />
+      </td>
+      <td>
+          <img src="./readme/screenshots/empresas-tablet.webp" width="100%" title="Tablet solution"/>
+      </td>
+      <td>
+          <img src="./readme/screenshots/empresas-desktop.webp" width="100%" title="Desktop solution"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <img src="./readme/screenshots/empresa-mobile.webp" width="100%" title="Mobile solution"  />
+      </td>
+      <td>
+          <img src="./readme/screenshots/empresa-tablet.webp" width="100%" title="Tablet solution"/>
+      </td>
+      <td>
+          <img src="./readme/screenshots/empresa-desktop.webp" width="100%" title="Desktop solution"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <img src="./readme/screenshots/empleos-mobile.webp" width="100%" title="Mobile solution"  />
+      </td>
+      <td>
+          <img src="./readme/screenshots/empleos-tablet.webp" width="100%" title="Tablet solution"/>
+      </td>
+      <td>
+          <img src="./readme/screenshots/empleos-desktop.webp" width="100%" title="Desktop solution"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <img src="./readme/screenshots/empleo-mobile.webp" width="100%" title="Mobile solution"  />
+      </td>
+      <td>
+          <img src="./readme/screenshots/empleo-tablet.webp" width="100%" title="Tablet solution"/>
+      </td>
+      <td>
+          <img src="./readme/screenshots/empleo-desktop.webp" width="100%" title="Desktop solution"/>
       </td>
     </tr>
 </table>
