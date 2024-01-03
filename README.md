@@ -130,15 +130,15 @@ git clone https://github.com/cosmoart/jobzilla
 ```sh
 cd source
 ```
-2. Add your own API key in env.local like
+3. Add your own API key in env.local like
 ```sh
 INFOJOBS_TOKEN=XXXXXXXXXXXXXXXXXX
 ```
-3. Install NPM packages
+4. Install NPM packages
 ```sh
 npm install
 ```
-4. Run the project
+5. Run the project
 ```sh
 npm run dev
 ```
