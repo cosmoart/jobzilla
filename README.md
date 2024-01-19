@@ -115,6 +115,8 @@ This is a project for the Infojobs Hackathon 2023. The app is built with Next.js
 * [Tailwind CSS](https://tailwindcss.com/) For styling
 * [Figma](https://www.figma.com/) For the design
 * [Pexels](https://www.pexels.com) For the images
+* [React Leaflet](https://react-leaflet.js.org) For the maps
+* [MapTiler](https://docs.maptiler.com/cloud/api) For geolocation
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
 
