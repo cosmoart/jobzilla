@@ -117,6 +117,8 @@ This is a project for the Infojobs Hackathon 2023. The app is built with Next.js
 * [Pexels](https://www.pexels.com) For the images
 * [React Leaflet](https://react-leaflet.js.org) For the maps
 * [MapTiler](https://docs.maptiler.com/cloud/api) For geolocation
+* [Medium Zoom](https://medium-zoom.francoischalifour.com) - To zoom in images
+* [shadcn/ui](https://ui.shadcn.com) - For components
 
 <p align="right"><a href="#top">⬆ Back to top</a></p>
 
