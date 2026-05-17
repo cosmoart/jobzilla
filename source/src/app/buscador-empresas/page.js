@@ -1,7 +1,7 @@
 'use client'
 
 import { Search as SearchIcon } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import axios from 'axios'
 import Companies from './Companies'
 import Search from './Seach'
@@ -38,7 +38,7 @@ export default function BuscadorEmpresas ({ searchParams }) {
 			<p className='text-center text-base md:text-lg mb-6 text-white'>Consulta más de 2 millones de opiniones de más de 9.000 empresas</p>
 			<form className='flex flex-row gap-4 items-center justify-center max-w-2xl mx-auto dark:text-gray-900 border bg-white overflow-hidden border-gray-300 rounded-lg focus:outline-none focus:ring-2' onSubmit={e => e.preventDefault()}>
 				<SearchIcon className='ml-5' />
-				<Search />
+				<Suspense><Search /></Suspense>
 			</form>
 			<Companies companies={companies} loading={loading} error={error} search={searchParams.query} />
 		</main>
