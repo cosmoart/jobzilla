@@ -2,13 +2,11 @@
 
 import useFetchData from '@/hooks/useFetchdata'
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
 import JobCard from '@/components/buscador-empleos/JobCard'
 import Form from '@/components/buscador-empleos/Form'
 import JobsNavBar from '@/components/buscador-empleos/JobsNavBar'
 import ErrorMessage from '@/components/ErrorMessage'
-
-const JobsMap = dynamic(() => import('@/components/JobsMap'), { ssr: false })
+import JobsMap from '@/components/JobsMapClient'
 
 export default function BuscadorEmpleos () {
 	const [params, setParams] = useState({})

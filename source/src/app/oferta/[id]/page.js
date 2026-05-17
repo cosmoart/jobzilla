@@ -1,11 +1,9 @@
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 import Error from '@/components/ErrorMessage'
 import { ExternalLink } from 'lucide-react'
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import axios from 'axios'
-
-const JobMap = dynamic(() => import('@/components/JobMap'), { ssr: false })
+import JobMap from '@/components/JobMapClient'
 
 const fetchJob = async (id) => {
 	return await axios(`${process.env.FETCH_URL}/api/jobs?id=${id}`, { cache: 'no-store' })
