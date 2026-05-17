@@ -17,7 +17,7 @@ export default function BuscadorEmpleos () {
 	const [formGrid, setFormGrid] = useState(1)
 
 	return (
-		<main className='section items-center justify-between p-3 max-w-7xl mx-auto px-6 2xl:px-0 flex-grow basis-0' data-dark-header='true'>
+		<main className='section items-center justify-between p-3 max-w-7xl mx-auto px-6 2xl:px-0 grow basis-0' data-dark-header='true'>
 
 			<Form setParams={setParams} />
 
@@ -35,7 +35,7 @@ export default function BuscadorEmpleos () {
 			}
 
 			<div className={`flex ${error ? 'min-h-[20rem]' : ' h-screen'}`}>
-				<ul className={`grid gap-2 md:pr-4 flex-grow basis-0 overflow-auto ${formGrid === 1 ? ' grid-cols-1' : 'grid-cols-2'}`}>
+				<ul className={`grid gap-2 md:pr-4 grow basis-0 overflow-auto ${formGrid === 1 ? ' grid-cols-1' : 'grid-cols-2'}`}>
 					{
 						loading && [1, 2, 3, 4, 5].map((_, i) => (
 							<li key={i} className='p-4 rounded-md border animate-pulse flex gap-4'>

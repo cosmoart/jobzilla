@@ -7,7 +7,7 @@ export default function Categories () {
 	return (
 		<div className='section px-6 md:px-0 flex-wrap items-center justify-center gap-8 text-center sm:flex mb-10'>
 			<div className='w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800'>
-				<div className='flex-shrink-0'>
+				<div className='shrink-0'>
 					<div className='flex items-center justify-center w-12 h-12 mx-auto text-white bg-blue-500 rounded-md'>
 						<Image src={buildingsIcon} alt='buildings' className='invert' width={20} height={20} />
 					</div>
@@ -20,7 +20,7 @@ export default function Categories () {
 				</p>
 			</div>
 			<div className='w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 sm:mt-16 md:mt-20 lg:mt-24 dark:bg-gray-800'>
-				<div className='flex-shrink-0'>
+				<div className='shrink-0'>
 					<div className='flex items-center justify-center w-12 h-12 mx-auto text-white bg-blue-500 rounded-md'>
 						<Image src={briefcaseIcon} alt='briefcase' className='invert' width={20} height={20} />
 					</div>
@@ -33,7 +33,7 @@ export default function Categories () {
 				</p>
 			</div>
 			<div className='w-full px-4 py-4 mt-6 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 dark:bg-gray-800'>
-				<div className='flex-shrink-0'>
+				<div className='shrink-0'>
 					<div className='flex items-center justify-center w-12 h-12 mx-auto text-white bg-blue-500 rounded-md'>
 						<Image src={mapIcon} alt='icono de un mapa' className='invert' width={20} height={20} />
 					</div>

@@ -46,7 +46,7 @@ export default function Combobox ({ items, placeholder = 'Seleccione una opción
 									setOpen(false)
 								}}
 								defaultSelected={value === item.value}
-								className={`text-[15px] ${i === 1 ? 'border-b-[1px] border-gray-300 pb-3' : ''} ${i === 2 ? 'pt-3' : ''}`}
+								className={`text-[15px] ${i === 1 ? 'border-b border-gray-300 pb-3' : ''} ${i === 2 ? 'pt-3' : ''}`}
 							>
 								<Check
 									className={cn(

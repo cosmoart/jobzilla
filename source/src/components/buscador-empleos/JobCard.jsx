@@ -20,7 +20,7 @@ export default function JobCard ({ job }) {
 							job.salaryMin.value && (
 								<>
 									<strong className='text-sm font-semibold text-green-600'>{job.salaryMin.value} - {job.salaryMax.value} / {job.salaryPeriod.value}</strong>
-									<span className='h-3 rounded w-[1px] bg-gray-800 inline-block' />
+									<span className='h-3 rounded w-px bg-gray-800 inline-block' />
 								</>
 							)
 						}

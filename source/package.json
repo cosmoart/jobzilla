@@ -21,7 +21,7 @@
 		"axios": "1.16.1",
 		"class-variance-authority": "0.7.1",
 		"cmdk": "1.1.1",
-		"eslint": "10.4.0",
+		"eslint": "9",
 		"eslint-config-next": "16.2.6",
 		"leaflet": "1.9.4",
 		"lucide-react": "1.16.0",
@@ -37,6 +37,7 @@
 		"tailwindcss-animate": "1.0.7"
 	},
 	"devDependencies": {
+		"@tailwindcss/postcss": "4.3.0",
 		"@types/node": "25.8.0",
 		"@types/react": "19.2.14",
 		"standard": "17.1.2"

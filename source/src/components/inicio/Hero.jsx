@@ -30,7 +30,7 @@ export default function Hero () {
 						<span className='text-white text-base'>En...</span>
 						<Combobox items={regiones} placeholder='Buscar región...' className='w-full sm:w-auto' />
 					</label>
-					<button className='bg-blue-600 mt-auto hover:bg-blue-700 text-white rounded-md py-2 border-[1px] border-blue-600 text-base px-7 w-full sm:w-auto'>Buscar</button>
+					<button className='bg-blue-600 mt-auto hover:bg-blue-700 text-white rounded-md py-2 border border-blue-600 text-base px-7 w-full sm:w-auto'>Buscar</button>
 				</form>
 
 			</div>

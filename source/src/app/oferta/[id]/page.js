@@ -59,29 +59,29 @@ export default async function Job ({ params, className }) {
 				<Table>
 					<TableBody className='text-[15px]'>
 						<TableRow>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Aplicaciones:</span> {job.applications}</TableCell>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Experiencia minima:</span> {job.experienceMin?.value}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Aplicaciones:</span> {job.applications}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Experiencia minima:</span> {job.experienceMin?.value}</TableCell>
 							<TableCell className='py-2'><span className='font-semibold'>Categoria:</span> {job.subcategory?.value} - {job.category?.value}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Estudios minimos:</span> {job.studiesMin?.value}</TableCell>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>País:</span> {job.country?.value}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Estudios minimos:</span> {job.studiesMin?.value}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>País:</span> {job.country?.value}</TableCell>
 							<TableCell className='py-2'><span className='font-semibold'>Tipo:</span> {job.teleworking?.value}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Salario:</span> {job.salaryDescription}</TableCell>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Contrato:</span> {job.contractType?.value}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Salario:</span> {job.salaryDescription}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Contrato:</span> {job.contractType?.value}</TableCell>
 							<TableCell className='py-2'><span className='font-semibold'>Vacantes:</span> {job.vacancies}</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Fecha de publicación:</span> {new Date(job.creationDate).toLocaleDateString()}</TableCell>
-							<TableCell className='border-r-[1px] py-2'><span className='font-semibold'>Nivel:</span> {job.jobLevel?.value}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Fecha de publicación:</span> {new Date(job.creationDate).toLocaleDateString()}</TableCell>
+							<TableCell className='border-r py-2'><span className='font-semibold'>Nivel:</span> {job.jobLevel?.value}</TableCell>
 							<TableCell className='py-2'><span className='font-semibold'>Duración del contrato:</span> {job.contractDuration}</TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>
 
-				<div className='flex-grow basis-0 mt-10'>
+				<div className='grow basis-0 mt-10'>
 					{job.description && (
 						<section>
 							<h2 className='mb-2 font-semibold text-xl'>Descripción</h2>
@@ -98,7 +98,7 @@ export default async function Job ({ params, className }) {
 				</div>
 			</div>
 
-			<div className='flex-grow mb-20 md:mb-0 md:basis-0 flex md:h-[90vh] w-full h-96 md:sticky top-16'>
+			<div className='grow mb-20 md:mb-0 md:basis-0 flex md:h-[90vh] w-full h-96 md:sticky top-16'>
 				<JobMap job={job} />
 			</div>
 		</main>

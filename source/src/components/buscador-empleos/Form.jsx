@@ -171,7 +171,7 @@ export default function Form ({ setParams }) {
 			</fieldset>
 
 			<fieldset className='flex gap-3 flex-col md:flex-row items-center'>
-				<div className='flex gap-2 flex-grow w-full text-center shrink-[0.6] items-center'>
+				<div className='flex gap-2 grow w-full text-center shrink-[0.6] items-center'>
 					<input type='range' name='salaryMin'
 						defaultValue={filters.salaryMin ?? 7000}
 						min={salaryRanges[filters.salaryPeriod ?? 'bruto-ano'].min}
@@ -195,7 +195,7 @@ export default function Form ({ setParams }) {
 					</div>
 				</div>
 
-				<span className='md:h-8 w-full h-[1px] rounded md:w-[1px] bg-gray-400 inline-block my-2  md:mx-2' />
+				<span className='md:h-8 w-full h-px rounded md:w-[1px] bg-gray-400 inline-block my-2  md:mx-2' />
 
 				<Select name='study'
 					onValueChange={(value) => handleInputChangue('study', value)}

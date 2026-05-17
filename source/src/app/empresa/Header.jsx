@@ -21,9 +21,9 @@ export default function Header ({ companyInfo }) {
 				{
 					companyInfo.corporativeWebUrl
 						? <a href={companyInfo.corporativeWebUrl} target='_blank' rel='noopener noreferrer'>
-							<Image className={`absolute right-0 left-0 m-auto -top-[4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
+							<Image className={`absolute right-0 left-0 m-auto top-[-4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? 'static! ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
 						</a>
-						: <Image className={`absolute right-0 left-0 m-auto -top-[4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? '!static ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
+						: <Image className={`absolute right-0 left-0 m-auto top-[-4rem] md:static size-24 sm:size-28 -mt-10 md:ml-5 rounded-md ring-8 ring-white ${!companyInfo.headerImageUrl ? 'static! ml-auto mr-auto mb-4' : ''}`} src={companyInfo.logoUrl ?? '/company-logo.png'} alt={companyInfo.name} width={70} height={70} />
 				}
 				<div className='flex flex-col md:ml-5 md:justify-start md:flex-row justify-center w-full gap-4 pb-10 md:pb-0 md:gap-8 items-center py-4 md:px-4'>
 					<div className='flex flex-col mb-3 text-center md:text-left'>
